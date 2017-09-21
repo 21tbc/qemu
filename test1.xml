@@ -49,13 +49,12 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='13952292-3db5-4576-bec4-aeb971375ddd'/>
       </auth>
-      <source protocol='rbd' name='libvirt-pool/ubuntu-16.0.4-image'>
+      <source protocol='rbd' name='os-pool/test'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vda' bus='virtio'/>
-      <boot order='1'/>
+      <target dev='sda' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
@@ -68,7 +67,7 @@ or other application using the libvirt API.
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vdb' bus='virtio'/>
+      <target dev='sdb' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
@@ -81,7 +80,7 @@ or other application using the libvirt API.
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vdc' bus='virtio'/>
+      <target dev='sdc' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
@@ -113,6 +112,7 @@ or other application using the libvirt API.
       <mac address='52:54:00:49:4e:26'/>
       <source bridge='br0'/>
       <model type='virtio'/>
+      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <serial type='pty'>
