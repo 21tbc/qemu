@@ -101,9 +101,6 @@ or other application using the libvirt API.
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
-    <graphics type='spice' port='-1' autoport='no' listen='127.0.0.1'>
-      <listen type='address' address='127.0.0.1'/>
-    </graphics>
     <graphics type='vnc' port='-1' autoport='yes' listen='127.0.0.1'>
       <listen type='address' address='127.0.0.1'/>
     </graphics>
