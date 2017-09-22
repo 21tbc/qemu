@@ -58,32 +58,6 @@ or other application using the libvirt API.
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='b09a7e87-055c-4fc2-a499-aca00659e710'/>
-      </auth>
-      <source protocol='rbd' name='data-pool/test3'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
-    </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='b09a7e87-055c-4fc2-a499-aca00659e710'/>
-      </auth>
-      <source protocol='rbd' name='data-pool/test4'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='vdc' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
-    </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
     </controller>
