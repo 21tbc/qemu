@@ -55,6 +55,7 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
+      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
@@ -86,7 +87,6 @@ or other application using the libvirt API.
       <mac address='52:54:00:7c:4d:9e'/>
       <source bridge='br0'/>
       <model type='rtl8139'/>
-      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <serial type='pty'>
