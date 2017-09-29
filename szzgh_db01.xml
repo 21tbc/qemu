@@ -1,15 +1,15 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit szzgh_app01
+  virsh edit szzgh_db01
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>szzgh_app01</name>
-  <uuid>18d202c5-d9aa-4946-a6dd-bc49c198655d</uuid>
-  <memory unit='KiB'>67108864</memory>
-  <currentMemory unit='KiB'>67108864</currentMemory>
+  <name>szzgh_db01</name>
+  <uuid>87e7ebea-9eb3-4c4b-aeac-c5ec4fe7acca</uuid>
+  <memory unit='KiB'>33554432</memory>
+  <currentMemory unit='KiB'>33554432</currentMemory>
   <vcpu placement='static'>8</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
@@ -18,8 +18,8 @@ or other application using the libvirt API.
     <acpi/>
     <apic/>
   </features>
-  <cpu mode='host-model'>
-    <model fallback='allow'/>
+  <cpu mode='custom' match='exact'>
+    <model fallback='allow'>IvyBridge</model>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
@@ -40,7 +40,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
-      <source protocol='rbd' name='os-pool/szzgh_app01.img'>
+      <source protocol='rbd' name='os-pool/szzgh_db01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -54,7 +54,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
-      <source protocol='rbd' name='data-pool/szzgh_app01_data01.img'>
+      <source protocol='rbd' name='data-pool/szzgh_db01_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -91,7 +91,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:df:5b:d8'/>
+      <mac address='52:54:00:9d:41:b7'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
