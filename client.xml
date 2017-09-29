@@ -10,13 +10,13 @@ or other application using the libvirt API.
   <uuid>377a4c0c-b766-45f8-93c0-2f74525a5988</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
-  <vcpu placement='static'>1</vcpu>
+  <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <bootmenu enable='no'/>
+    <bootmenu enable='yes'/>
   </os>
   <features>
     <acpi/>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
-        <secret type='ceph' uuid='b09a7e87-055c-4fc2-a499-aca00659e710'/>
+        <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
       <source protocol='rbd' name='os-pool/cobbler-client.img'>
         <host name='ceph101' port='6789'/>
@@ -55,6 +55,7 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
+      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
@@ -83,10 +84,9 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:7c:4d:9e'/>
+      <mac address='52:54:00:e3:7f:aa'/>
       <source bridge='br0'/>
-      <model type='rtl8139'/>
-      <boot order='1'/>
+      <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <serial type='pty'>
