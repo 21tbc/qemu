@@ -65,7 +65,6 @@ or other application using the libvirt API.
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/var/lib/libvirt/images/CentOS-6.9-x86_64-bin-DVD1.iso'/>
       <target dev='hdb' bus='ide'/>
       <readonly/>
       <boot order='2'/>
