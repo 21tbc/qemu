@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='c87e1e29-237c-4a13-93de-821e78e7c7df'/>
       </auth>
-      <source protocol='rbd' name='os-pool/cobbler-client.img'>
+      <source protocol='rbd' name='os-pool/szzgh_app01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
