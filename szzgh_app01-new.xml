@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit szzgh_app01
+  virsh edit szzgh_app01-new
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>szzgh_app01</name>
-  <uuid>18d202c5-d9aa-4946-a6dd-bc49c198655d</uuid>
+  <name>szzgh_app01-new</name>
+  <uuid>8c0100f9-8b26-4990-920d-882c510fd5a9</uuid>
   <memory unit='KiB'>100663296</memory>
   <currentMemory unit='KiB'>100663296</currentMemory>
   <vcpu placement='static'>8</vcpu>
@@ -81,7 +81,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:f8:45:f7'/>
+      <mac address='52:54:00:03:9a:4b'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
