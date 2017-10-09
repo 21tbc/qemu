@@ -1,31 +1,26 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit test2
+  virsh edit talk_main_new
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>test2</name>
-  <uuid>47613e3e-0c16-4ae0-ad56-33eb74bb9dde</uuid>
-  <memory unit='KiB'>8216576</memory>
-  <currentMemory unit='KiB'>8216576</currentMemory>
-  <vcpu placement='static'>1</vcpu>
+  <name>talk_main_new</name>
+  <uuid>ec0172fb-cca2-4c22-ab5c-ea862ab7f519</uuid>
+  <memory unit='KiB'>16777216</memory>
+  <currentMemory unit='KiB'>16777216</currentMemory>
+  <vcpu placement='static'>2</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <bootmenu enable='no'/>
+    <bootmenu enable='yes'/>
   </os>
   <features>
     <acpi/>
     <apic/>
-    <hyperv>
-      <relaxed state='on'/>
-      <vapic state='on'/>
-      <spinlocks state='on' retries='4096'/>
-    </hyperv>
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
@@ -49,40 +44,20 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='c87e1e29-237c-4a13-93de-821e78e7c7df'/>
       </auth>
-      <source protocol='rbd' name='os-pool/ubuntu-16.0.4-image'>
+      <source protocol='rbd' name='os-pool/talk_main_new.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
-    <disk type='network' device='disk'>
+    <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='c87e1e29-237c-4a13-93de-821e78e7c7df'/>
-      </auth>
-      <source protocol='rbd' name='data-pool/test'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
-    </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='c87e1e29-237c-4a13-93de-821e78e7c7df'/>
-      </auth>
-      <source protocol='rbd' name='data-pool/test2'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='vdc' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
+      <target dev='hda' bus='ide'/>
+      <readonly/>
+      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
@@ -106,11 +81,8 @@ or other application using the libvirt API.
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
-    <controller type='scsi' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
-    </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:49:4e:26'/>
+      <mac address='52:54:00:33:09:5c'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
