@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit v3_app3
+  virsh edit company_mail
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>v3_app3</name>
+  <name>company_mail</name>
   <uuid>44cc5221-37ba-4dc3-916b-e8269be85a19</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
@@ -74,6 +74,19 @@ or other application using the libvirt API.
       </source>
       <target dev='vdc' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
+    </disk>
+    <disk type='network' device='disk'>
+      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <auth username='libvirt'>
+        <secret type='ceph' uuid='c87e1e29-237c-4a13-93de-821e78e7c7df'/>
+      </auth>
+      <source protocol='rbd' name='lxc-pool/rbd-company_mail'>
+        <host name='ceph101' port='6789'/>
+        <host name='ceph102' port='6789'/>
+        <host name='ceph103' port='6789'/>
+      </source>
+      <target dev='vdd' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
