@@ -7,25 +7,20 @@ or other application using the libvirt API.
 
 <domain type='kvm'>
   <name>test2</name>
-  <uuid>47613e3e-0c16-4ae0-ad56-33eb74bb9dde</uuid>
-  <memory unit='KiB'>8216576</memory>
-  <currentMemory unit='KiB'>8216576</currentMemory>
-  <vcpu placement='static'>1</vcpu>
+  <uuid>09869b0c-de80-4095-9d3b-a787ad19adc0</uuid>
+  <memory unit='KiB'>16777216</memory>
+  <currentMemory unit='KiB'>16777216</currentMemory>
+  <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <bootmenu enable='no'/>
+    <bootmenu enable='yes'/>
   </os>
   <features>
     <acpi/>
     <apic/>
-    <hyperv>
-      <relaxed state='on'/>
-      <vapic state='on'/>
-      <spinlocks state='on' retries='4096'/>
-    </hyperv>
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
@@ -56,7 +51,7 @@ or other application using the libvirt API.
       </source>
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
@@ -69,7 +64,7 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
@@ -86,7 +81,6 @@ or other application using the libvirt API.
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/var/lib/libvirt/images/CentOS-6.9-x86_64-bin-DVD1.iso'/>
       <target dev='hda' bus='ide'/>
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
@@ -113,11 +107,8 @@ or other application using the libvirt API.
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
-    <controller type='scsi' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
-    </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:49:4e:26'/>
+      <mac address='52:54:00:a2:01:aa'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
