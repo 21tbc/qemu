@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit v3_app4
+  virsh edit phpsite
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>v3_app4</name>
+  <name>phpsite</name>
   <uuid>50847564-9976-4c27-9aff-e76df4f0f8c1</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
