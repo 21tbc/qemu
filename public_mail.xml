@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit v3_app1
+  virsh edit public_mail
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>v3_app1</name>
+  <name>public_mail</name>
   <uuid>e8bc99ea-6047-4a55-8a9d-7e6397e31b2a</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
@@ -108,6 +108,12 @@ or other application using the libvirt API.
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+    <interface type='bridge'>
+      <mac address='52:54:00:6c:69:fe'/>
+      <source bridge='br0'/>
+      <model type='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
     </interface>
     <serial type='pty'>
       <target port='0'/>
