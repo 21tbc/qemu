@@ -8,7 +8,7 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>company_mail</name>
   <uuid>44cc5221-37ba-4dc3-916b-e8269be85a19</uuid>
-  <memory unit='KiB'>8216576</memory>
+  <memory unit='KiB'>10485760</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
   <memoryBacking>
     <hugepages/>
