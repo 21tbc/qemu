@@ -1,26 +1,26 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit szzgh_db01
+  virsh edit szzgh_app01-new
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>szzgh_db01</name>
-  <uuid>87e7ebea-9eb3-4c4b-aeac-c5ec4fe7acca</uuid>
-  <memory unit='KiB'>33554432</memory>
-  <currentMemory unit='KiB'>30554432</currentMemory>
+  <name>szzgh_app01-new</name>
+  <uuid>8c0100f9-8b26-4990-920d-882c510fd5a9</uuid>
+  <memory unit='KiB'>100663296</memory>
+  <currentMemory unit='KiB'>100663296</currentMemory>
   <vcpu placement='static'>8</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <bootmenu enable='yes'/>
+    <bootmenu enable='no'/>
   </os>
   <features>
     <acpi/>
     <apic/>
   </features>
-  <cpu mode='custom' match='exact'>
-    <model fallback='allow'>IvyBridge</model>
+  <cpu mode='host-model'>
+    <model fallback='allow'/>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
@@ -41,7 +41,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
-      <source protocol='rbd' name='os-pool/szzgh_db01.img'>
+      <source protocol='rbd' name='os-pool/szzgh_app01-new.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -55,7 +55,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
-      <source protocol='rbd' name='data-pool/szzgh_db01_data01.img'>
+      <source protocol='rbd' name='data-pool/szzgh_app01_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -65,6 +65,7 @@ or other application using the libvirt API.
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
+      <source file='/var/lib/libvirt/images/CentOS-6.9-x86_64-bin-DVD1.iso'/>
       <target dev='hdb' bus='ide'/>
       <readonly/>
       <boot order='2'/>
@@ -93,7 +94,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:d6:0f:f2'/>
+      <mac address='52:54:00:03:9a:4b'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>

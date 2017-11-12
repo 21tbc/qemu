@@ -9,7 +9,11 @@ or other application using the libvirt API.
   <name>szzgh_app01-new</name>
   <uuid>8c0100f9-8b26-4990-920d-882c510fd5a9</uuid>
   <memory unit='KiB'>100663296</memory>
-  <currentMemory unit='KiB'>100663296</currentMemory>
+  <currentMemory unit='KiB'>94371840</currentMemory>
+  <memtune>
+    <hard_limit unit='KiB'>94371840</hard_limit>
+    <soft_limit unit='KiB'>94371840</soft_limit>
+  </memtune>
   <vcpu placement='static'>8</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
