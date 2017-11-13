@@ -10,6 +10,9 @@ or other application using the libvirt API.
   <uuid>09869b0c-de80-4095-9d3b-a787ad19adc0</uuid>
   <memory unit='KiB'>16777216</memory>
   <currentMemory unit='KiB'>16777216</currentMemory>
+  <memoryBacking>
+    <hugepages/>
+  </memoryBacking>
   <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
