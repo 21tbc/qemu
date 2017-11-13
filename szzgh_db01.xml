@@ -9,7 +9,7 @@ or other application using the libvirt API.
   <name>szzgh_db01</name>
   <uuid>87e7ebea-9eb3-4c4b-aeac-c5ec4fe7acca</uuid>
   <memory unit='KiB'>33554432</memory>
-  <currentMemory unit='KiB'>30554432</currentMemory>
+  <currentMemory unit='KiB'>25554432</currentMemory>
   <memtune>
     <hard_limit unit='KiB'>30554432</hard_limit>
     <soft_limit unit='KiB'>30554432</soft_limit>
