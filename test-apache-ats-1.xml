@@ -9,10 +9,11 @@ or other application using the libvirt API.
   <name>test-apache-ats-1</name>
   <uuid>4090d01c-0490-4c6e-88f0-c7f1a6a17894</uuid>
   <memory unit='KiB'>8485888</memory>
-  <currentMemory unit='KiB'>2485760</currentMemory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
   <memtune>
-    <hard_limit unit='KiB'>2485760</hard_limit>
-    <soft_limit unit='KiB'>2485760</soft_limit>
+    <hard_limit unit='KiB'>4096000</hard_limit>
+    <soft_limit unit='KiB'>4096000</soft_limit>
+    <swap_hard_limit unit='KiB'>4096000</swap_hard_limit>
   </memtune>
   <vcpu placement='static'>4</vcpu>
   <resource>
