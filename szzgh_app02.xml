@@ -7,16 +7,17 @@ or other application using the libvirt API.
 
 <domain type='kvm'>
   <name>szzgh_app02</name>
-  <uuid>f5af87af-0e1b-40f3-80d3-e7d90ff596f8</uuid>
-  <memory unit='KiB'>100663296</memory>
-  <currentMemory unit='KiB'>90371840</currentMemory>
-  <vcpu placement='static'>8</vcpu>
-  <resource>
-    <partition>/machine</partition>
-  </resource>
+  <uuid>8ef32868-c64a-4fb9-b48a-43a4d2720b4e</uuid>
+  <memory unit='KiB'>94371840</memory>
+  <currentMemory unit='KiB'>94371840</currentMemory>
+  <memtune>
+    <hard_limit unit='KiB'>94371840</hard_limit>
+    <soft_limit unit='KiB'>94371840</soft_limit>
+    <swap_hard_limit unit='KiB'>94371840</swap_hard_limit>
+  </memtune>
+  <vcpu placement='static'>16</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <bootmenu enable='no'/>
   </os>
   <features>
     <acpi/>
@@ -66,6 +67,13 @@ or other application using the libvirt API.
       <target dev='vdb' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
+    <disk type='file' device='cdrom'>
+      <driver name='qemu' type='raw'/>
+      <source file='/var/lib/libvirt/images/ubuntu-16.04.2-server-amd64.iso'/>
+      <target dev='hda' bus='ide'/>
+      <readonly/>
+      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+    </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
     </controller>
@@ -89,7 +97,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:43:57:33'/>
+      <mac address='52:54:00:e7:ee:49'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
@@ -106,9 +114,7 @@ or other application using the libvirt API.
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
-    <graphics type='spice' port='-1' autoport='no' listen='127.0.0.1'>
-      <listen type='address' address='127.0.0.1'/>
-    </graphics>
+    <graphics type='spice' autoport='yes'/>
     <sound model='ich6'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </sound>
@@ -124,5 +130,4 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </memballoon>
   </devices>
-  <seclabel type='dynamic' model='apparmor' relabel='yes'/>
 </domain>
