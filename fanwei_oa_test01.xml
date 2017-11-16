@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>fanwei_oa_test01</name>
   <uuid>1cd3a82e-a879-4581-b108-c840c48c307f</uuid>
-  <memory unit='KiB'>25165824</memory>
-  <currentMemory unit='KiB'>25165824</currentMemory>
+  <memory unit='KiB'>9216000</memory>
+  <currentMemory unit='KiB'>9216000</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
