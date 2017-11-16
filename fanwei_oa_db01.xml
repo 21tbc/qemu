@@ -19,6 +19,7 @@ or other application using the libvirt API.
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
+    <boot dev='hd'/>
     <bootmenu enable='yes'/>
   </os>
   <features>
@@ -42,14 +43,6 @@ or other application using the libvirt API.
   </pm>
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
-    <disk type='file' device='cdrom'>
-      <driver name='qemu' type='raw'/>
-      <source file='/var/lib/libvirt/images/cn_windows_server_2012_r2_with_update_x64_dvd_6052725.iso'/>
-      <target dev='hda' bus='ide'/>
-      <readonly/>
-      <boot order='1'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
-    </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
