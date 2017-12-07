@@ -13,7 +13,6 @@ or other application using the libvirt API.
   <memtune>
     <hard_limit unit='KiB'>30544320</hard_limit>
     <soft_limit unit='KiB'>30544320</soft_limit>
-    <swap_hard_limit unit='KiB'>33544320</swap_hard_limit>
   </memtune>
   <vcpu placement='static'>8</vcpu>
   <os>
