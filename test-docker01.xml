@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit test-ats-7
+  virsh edit test-docker01
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>test-ats-7</name>
+  <name>test-docker01</name>
   <uuid>a4c51271-9f94-420e-ada2-a18ad175ca28</uuid>
   <memory unit='KiB'>8388608</memory>
   <currentMemory unit='KiB'>8388608</currentMemory>
@@ -44,7 +44,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='a231f46d-294e-47ae-a35a-8e54b9620498'/>
       </auth>
-      <source protocol='rbd' name='os-pool/test-ats-7.img'>
+      <source protocol='rbd' name='os-pool/test-docker01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
