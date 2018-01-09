@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit elp_yufa_01
+  virsh edit yufa_elp_01
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>elp_yufa_01</name>
+  <name>yufa_elp_01</name>
   <uuid>37613e3e-0c16-4ae0-ad56-33eb74bb9ebe</uuid>
   <memory unit='KiB'>67108864</memory>
   <currentMemory unit='KiB'>61440000</currentMemory>
@@ -97,9 +97,12 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:f1:59:6a'/>
-      <source bridge='br0'/>
-      <model type='rtl8139'/>
+      <mac address='52:54:00:e3:31:16'/>
+      <source bridge='sw1'/>
+      <virtualport type='openvswitch'>
+        <parameters interfaceid='00b35a7f-9974-4cae-9d33-a6626080962e'/>
+      </virtualport>
+      <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <serial type='pty'>
