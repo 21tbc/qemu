@@ -44,7 +44,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='a231f46d-294e-47ae-a35a-8e54b9620498'/>
       </auth>
-      <source protocol='rbd' name='os-pool/test-docker01.img'>
+      <source protocol='rbd' name='os-pool/test-docker011.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
