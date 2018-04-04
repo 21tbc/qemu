@@ -10,11 +10,6 @@ or other application using the libvirt API.
   <uuid>8ef32868-c64a-4fb9-b48a-43a4d2720b4e</uuid>
   <memory unit='KiB'>94371840</memory>
   <currentMemory unit='KiB'>94371840</currentMemory>
-  <memtune>
-    <hard_limit unit='KiB'>94371840</hard_limit>
-    <soft_limit unit='KiB'>94371840</soft_limit>
-    <swap_hard_limit unit='KiB'>94371840</swap_hard_limit>
-  </memtune>
   <vcpu placement='static'>16</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
