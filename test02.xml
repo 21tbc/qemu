@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='c87e1e29-237c-4a13-93de-821e78e7c7df'/>
       </auth>
-      <source protocol='rbd' name='os-pool/nanjing_test02.img'>
+      <source protocol='rbd' name='test/test02.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -60,7 +60,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='c87e1e29-237c-4a13-93de-821e78e7c7df'/>
       </auth>
-      <source protocol='rbd' name='data-pool/nanjing_test02_data01.img'>
+      <source protocol='rbd' name='test/test02_data0.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
