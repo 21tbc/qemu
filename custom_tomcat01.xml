@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>custom_tomcat01</name>
   <uuid>a9a5cfc6-3b91-4d80-bcab-09c8ca42e9a7</uuid>
-  <memory unit='KiB'>67108864</memory>
-  <currentMemory unit='KiB'>61440000</currentMemory>
-  <vcpu placement='static'>8</vcpu>
+  <memory unit='KiB'>65536000</memory>
+  <currentMemory unit='KiB'>65536000</currentMemory>
+  <vcpu placement='static' current='12'>16</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='d212292d-470b-4810-9f7e-f8c71a2966e9'/>
       </auth>
-      <source protocol='rbd' name='os-pool/yufa_elp_01.img'>
+      <source protocol='rbd' name='os-pool/custom_tomcat01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='d212292d-470b-4810-9f7e-f8c71a2966e9'/>
       </auth>
-      <source protocol='rbd' name='data-pool/yufa_elp_01_data01.img'>
+      <source protocol='rbd' name='data-pool/custom_tomcat01_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
