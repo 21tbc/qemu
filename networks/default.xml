@@ -7,10 +7,10 @@ or other application using the libvirt API.
 
 <network>
   <name>default</name>
-  <uuid>34d1e97c-f812-4c44-ae63-0ffb0464d18b</uuid>
+  <uuid>efe4db57-4a3a-4e0f-bb01-90bfc2b5d6da</uuid>
   <forward mode='nat'/>
   <bridge name='virbr0' stp='on' delay='0'/>
-  <mac address='52:54:00:65:af:c6'/>
+  <mac address='52:54:00:0a:55:90'/>
   <ip address='192.168.122.1' netmask='255.255.255.0'>
     <dhcp>
       <range start='192.168.122.2' end='192.168.122.254'/>
