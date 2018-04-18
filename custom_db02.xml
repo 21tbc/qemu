@@ -5,11 +5,11 @@ OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
 or other application using the libvirt API.
 -->
 
-<domain type='kvm'>
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
   <name>custom_db02</name>
   <uuid>35622098-2373-4d36-878b-b78494e9b4d4</uuid>
-  <memory unit='KiB'>65536000</memory>
-  <currentMemory unit='KiB'>65536000</currentMemory>
+  <memory unit='KiB'>32768000</memory>
+  <currentMemory unit='KiB'>32768000</currentMemory>
   <vcpu placement='static' current='12'>16</vcpu>
   <resource>
     <partition>/machine</partition>
@@ -137,4 +137,8 @@ or other application using the libvirt API.
     </memballoon>
   </devices>
   <seclabel type='dynamic' model='apparmor' relabel='yes'/>
+  <qemu:commandline>
+    <qemu:arg value='-cpu'/>
+    <qemu:arg value='host,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,kvm=off,hv_vendor_id=xeon'/>
+  </qemu:commandline>
 </domain>
