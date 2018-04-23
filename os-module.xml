@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit ubuntu-module
+  virsh edit os-module
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>ubuntu-module</name>
+  <name>os-module</name>
   <uuid>0d8021b1-ded8-44dd-abd6-22edfdd04175</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
-      <source protocol='rbd' name='libvirt-pool/templete-centos-6.5-image'>
+      <source protocol='rbd' name='libvirt-pool/templete-centos-7.2.image'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
