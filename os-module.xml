@@ -10,16 +10,6 @@ or other application using the libvirt API.
   <uuid>0d8021b1-ded8-44dd-abd6-22edfdd04175</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
-  <blkiotune>
-    <device>
-      <path>/dev/sda</path>
-      <weight>500</weight>
-      <read_iops_sec>200</read_iops_sec>
-      <write_iops_sec>400</write_iops_sec>
-      <read_bytes_sec>10485760</read_bytes_sec>
-      <write_bytes_sec>10485760</write_bytes_sec>
-    </device>
-  </blkiotune>
   <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
