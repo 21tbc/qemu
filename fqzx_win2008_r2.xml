@@ -71,6 +71,7 @@ or other application using the libvirt API.
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
+      <source file='/var/lib/libvirt/images/fqzx.iso'/>
       <target dev='hda' bus='ide'/>
       <readonly/>
       <boot order='1'/>
