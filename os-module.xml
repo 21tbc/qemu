@@ -99,6 +99,11 @@ or other application using the libvirt API.
     <interface type='bridge'>
       <mac address='52:54:00:6c:77:a3'/>
       <source bridge='br0'/>
+      <bandwidth>
+        <inbound average='20000' peak='2500' burst='1024'/>
+        <outbound average='20000' peak='2500' burst='1024'/>
+      </bandwidth>
+      <target dev='eth0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
