@@ -71,7 +71,6 @@ or other application using the libvirt API.
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/var/lib/libvirt/images/cn_windows_server_2008_r2_standard_enterprise_datacenter_and_web_with_sp1_vl_build_x64_dvd_617396.iso'/>
       <target dev='hda' bus='ide'/>
       <readonly/>
       <boot order='1'/>
@@ -115,7 +114,7 @@ or other application using the libvirt API.
       <virtualport type='openvswitch'>
         <parameters interfaceid='fdfabf59-45e3-42eb-9234-b77dae13d92f'/>
       </virtualport>
-      <model type='e1000'/>
+      <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <serial type='pty'>
@@ -128,7 +127,7 @@ or other application using the libvirt API.
       <target type='virtio' name='com.redhat.spice.0'/>
       <address type='virtio-serial' controller='0' bus='0' port='1'/>
     </channel>
-    <input type='mouse' bus='usb'/>
+    <input type='tablet' bus='usb'/>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
     <graphics type='vnc' port='-1' autoport='yes'/>
