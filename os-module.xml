@@ -84,13 +84,11 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:6c:77:a3'/>
-      <source bridge='br0'/>
-      <bandwidth>
-        <inbound average='1000' peak='3000' burst='5000'/>
-        <outbound average='1000' peak='3000' burst='5000'/>
-      </bandwidth>
-      <target dev='eth0'/>
+      <mac address='52:54:00:a0:ee:9e'/>
+      <source bridge='sw1'/>
+      <virtualport type='openvswitch'>
+        <parameters interfaceid='691300bc-101b-4345-969d-a89cff5c10b9'/>
+      </virtualport>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
