@@ -19,6 +19,7 @@ or other application using the libvirt API.
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
+    <boot dev='hd'/>
     <bootmenu enable='yes'/>
   </os>
   <features>
@@ -53,7 +54,6 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
-      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
     <disk type='file' device='disk'>
