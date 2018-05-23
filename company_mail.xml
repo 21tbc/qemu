@@ -48,7 +48,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
-      <source protocol='rbd' name='os-pool/snap_v3_app3.img'>
+      <source protocol='rbd' name='os-pool/company_mail_new'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
