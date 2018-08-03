@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>ctm154</name>
   <uuid>5d675975-5c91-4745-bf7b-5914fdadd834</uuid>
-  <memory unit='KiB'>8192000</memory>
-  <currentMemory unit='KiB'>8192000</currentMemory>
+  <memory unit='KiB'>65536000</memory>
+  <currentMemory unit='KiB'>65536000</currentMemory>
   <vcpu placement='static'>12</vcpu>
   <resource>
     <partition>/machine</partition>
