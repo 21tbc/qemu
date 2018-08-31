@@ -107,8 +107,8 @@ or other application using the libvirt API.
       <mac address='52:54:00:d7:31:14'/>
       <source bridge='br0'/>
       <bandwidth>
-        <inbound average='128000' peak='134400' burst='12800'/>
-        <outbound average='128000' peak='134400' burst='12800'/>
+        <inbound average='100'/>
+        <outbound average='100'/>
       </bandwidth>
       <target dev='eth1'/>
       <model type='virtio'/>
