@@ -71,7 +71,7 @@ or other application using the libvirt API.
       <target dev='vdb' bus='virtio'/>
       <iotune>
         <total_bytes_sec>100000</total_bytes_sec>
-        <total_iops_sec>50</total_iops_sec>
+        <total_iops_sec>100</total_iops_sec>
       </iotune>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
     </disk>
