@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit SA-zabbix
+  virsh edit sa-zabbix
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>SA-zabbix</name>
+  <name>sa-zabbix</name>
   <uuid>1eb14feb-d8e7-4f4f-89aa-ff164863c98e</uuid>
   <memory unit='KiB'>4194304</memory>
   <currentMemory unit='KiB'>4194304</currentMemory>
@@ -50,10 +50,6 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
-      <iotune>
-        <total_bytes_sec>100000000</total_bytes_sec>
-        <total_iops_sec>5000</total_iops_sec>
-      </iotune>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
@@ -68,10 +64,6 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vdb' bus='virtio'/>
-      <iotune>
-        <total_bytes_sec>100000000</total_bytes_sec>
-        <total_iops_sec>5000</total_iops_sec>
-      </iotune>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
@@ -105,10 +97,6 @@ or other application using the libvirt API.
     <interface type='bridge'>
       <mac address='52:54:00:a9:ad:ad'/>
       <source bridge='br0'/>
-      <bandwidth>
-        <inbound average='128000'/>
-        <outbound average='128000'/>
-      </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
