@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='V4.0-custom-data-pool/ctm151_data01.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/ctm151_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
