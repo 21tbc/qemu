@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit ctm182
+  virsh edit ctm145
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>ctm182</name>
-  <uuid>c7a4c95a-c370-4b89-8d98-106ec5650c8b</uuid>
+  <name>ctm145</name>
+  <uuid>d8fbbf60-648c-4530-af55-d281bd87b2b4</uuid>
   <memory unit='KiB'>65536000</memory>
   <currentMemory unit='KiB'>65536000</currentMemory>
   <vcpu placement='static'>12</vcpu>
@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/ctm152.img'>
+      <source protocol='rbd' name='os-pool/ctm145.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/ctm152_data01.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/ctm145_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -100,7 +100,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:3e:2f:10'/>
+      <mac address='52:54:00:6a:23:f5'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
