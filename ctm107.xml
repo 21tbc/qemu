@@ -5,7 +5,7 @@ OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
 or other application using the libvirt API.
 -->
 
-<domain type='kvm'>
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
   <name>ctm107</name>
   <uuid>2f9d09f0-eeae-445b-b3f5-8d2580527f7a</uuid>
   <memory unit='KiB'>65536000</memory>
@@ -136,4 +136,8 @@ or other application using the libvirt API.
     </memballoon>
   </devices>
   <seclabel type='dynamic' model='apparmor' relabel='yes'/>
+  <qemu:commandline>
+    <qemu:arg value='-cpu'/>
+    <qemu:arg value='host,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,kvm=off,hv_vendor_id=xeon'/>
+  </qemu:commandline>
 </domain>
