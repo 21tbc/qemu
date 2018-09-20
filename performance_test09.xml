@@ -48,7 +48,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='d212292d-470b-4810-9f7e-f8c71a2966e9'/>
       </auth>
-      <source protocol='rbd' name='os-pool/performance_test01.img'>
+      <source protocol='rbd' name='os-pool/performance_test09.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
