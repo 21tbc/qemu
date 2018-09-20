@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit ctm120_bad
+  virsh edit test
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>ctm120_bad</name>
+  <name>test</name>
   <uuid>93c2d20e-4dfc-4f09-b3f9-17404c5c29c6</uuid>
   <memory unit='KiB'>2048000</memory>
   <currentMemory unit='KiB'>2048000</currentMemory>
