@@ -44,7 +44,7 @@ or other application using the libvirt API.
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <driver name='qemu' type='raw' cache='none'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <driver name='qemu' type='raw' cache='none'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='1c067acd-64b4-4c2a-83df-516fb83fbb07'/>
       </auth>
