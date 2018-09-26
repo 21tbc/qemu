@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>ctm88</name>
   <uuid>d8b3131a-f8f9-474b-b3d0-0e51f31e24ea</uuid>
-  <memory unit='KiB'>2048000</memory>
-  <currentMemory unit='KiB'>2048000</currentMemory>
-  <vcpu placement='static'>1</vcpu>
+  <memory unit='KiB'>16384000</memory>
+  <currentMemory unit='KiB'>16384000</currentMemory>
+  <vcpu placement='static'>2</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/ctm120_bad.img'>
+      <source protocol='rbd' name='os-pool/ctm88.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -57,6 +57,19 @@ or other application using the libvirt API.
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
+    </disk>
+    <disk type='network' device='disk'>
+      <driver name='qemu' cache='none'/>
+      <auth username='libvirt'>
+        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
+      </auth>
+      <source protocol='rbd' name='v4_custom_data_pool/ctm88_data01.img'>
+        <host name='ceph101' port='6789'/>
+        <host name='ceph102' port='6789'/>
+        <host name='ceph103' port='6789'/>
+      </source>
+      <target dev='vdb' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
