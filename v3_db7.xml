@@ -9,7 +9,7 @@ or other application using the libvirt API.
   <name>v3_db7</name>
   <uuid>d2ea5b3a-74f1-4a81-8776-860e5555432b</uuid>
   <memory unit='KiB'>8216576</memory>
-  <currentMemory unit='KiB'>8216576</currentMemory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
@@ -57,7 +57,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
     <disk type='file' device='disk'>
-      <driver name='qemu' type='qcow2'/>
+      <driver name='qemu' type='qcow2' cache='none'/>
       <source file='/var/lib/libvirt/swap/host01-14.qcow2'/>
       <target dev='vdb' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
