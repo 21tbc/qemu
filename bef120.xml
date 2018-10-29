@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>bef120</name>
   <uuid>de500fb4-b0cc-4fd4-b538-2fd431fad753</uuid>
-  <memory unit='KiB'>98304000</memory>
-  <currentMemory unit='KiB'>98304000</currentMemory>
+  <memory unit='KiB'>131072000</memory>
+  <currentMemory unit='KiB'>131072000</currentMemory>
   <vcpu placement='static'>12</vcpu>
   <resource>
     <partition>/machine</partition>
