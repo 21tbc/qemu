@@ -113,8 +113,8 @@ or other application using the libvirt API.
       <mac address='52:54:00:67:3e:21'/>
       <source bridge='br0'/>
       <bandwidth>
-        <inbound average='2000'/>
-        <outbound average='2000'/>
+        <inbound average='3500'/>
+        <outbound average='3500'/>
       </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
