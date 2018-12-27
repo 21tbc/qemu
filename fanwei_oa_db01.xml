@@ -5,15 +5,15 @@ OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
 or other application using the libvirt API.
 -->
 
-<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+<domain type='kvm'>
   <name>fanwei_oa_db01</name>
   <uuid>593817e3-5d94-494d-a376-3faaf48f7e2d</uuid>
-  <memory unit='KiB'>65536000</memory>
-  <currentMemory unit='KiB'>65536000</currentMemory>
+  <memory unit='KiB'>16384000</memory>
+  <currentMemory unit='KiB'>16384000</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
-  <vcpu placement='static'>8</vcpu>
+  <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -115,26 +115,16 @@ or other application using the libvirt API.
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
-    <graphics type='vnc' port='-1' autoport='yes' listen='127.0.0.1'>
-      <listen type='address' address='127.0.0.1'/>
-    </graphics>
+    <graphics type='spice' autoport='no'/>
     <sound model='ich6'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </sound>
     <video>
-      <model type='qxl' ram='65536' vram='65536' vgamem='16384' heads='1'/>
+      <model type='cirrus' vram='16384' heads='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
     </video>
-    <redirdev bus='usb' type='spicevmc'>
-    </redirdev>
-    <redirdev bus='usb' type='spicevmc'>
-    </redirdev>
     <memballoon model='virtio'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </memballoon>
   </devices>
-  <qemu:commandline>
-    <qemu:arg value='-cpu'/>
-    <qemu:arg value='host,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,kvm=off,hv_vendor_id=xeon'/>
-  </qemu:commandline>
 </domain>
