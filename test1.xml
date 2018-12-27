@@ -1,7 +1,7 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit kejianzhizuo_01
+  virsh edit test1
 or other application using the libvirt API.
 -->
 
@@ -74,6 +74,7 @@ or other application using the libvirt API.
         <parameters interfaceid='fdfabf59-45e3-42eb-9234-b77dae13d92f'/>
       </virtualport>
       <model type='rtl8139'/>
+      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <serial type='pty'>
