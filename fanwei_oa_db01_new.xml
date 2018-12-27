@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>fanwei_oa_db01_new</name>
   <uuid>593817e3-5d94-494d-a376-2faaf38f8e4d</uuid>
-  <memory unit='KiB'>16777216</memory>
-  <currentMemory unit='KiB'>16777216</currentMemory>
+  <memory unit='KiB'>67108864</memory>
+  <currentMemory unit='KiB'>67108864</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
@@ -19,7 +19,6 @@ or other application using the libvirt API.
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <boot dev='hd'/>
     <bootmenu enable='yes'/>
   </os>
   <features>
@@ -54,6 +53,7 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='hda' bus='ide'/>
+      <boot order='1'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <disk type='network' device='disk'>
@@ -67,7 +67,7 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='hdb' bus='ide'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
