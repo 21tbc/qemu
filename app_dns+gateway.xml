@@ -8,12 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>app_dns+gateway</name>
   <uuid>47613e3e-0c16-4ae0-ad56-33eb74bb9ebe</uuid>
-  <memory unit='KiB'>8216576</memory>
-  <currentMemory unit='KiB'>8216576</currentMemory>
-  <vcpu placement='auto' current='1'>2</vcpu>
-  <numatune>
-    <memory mode='strict' placement='auto'/>
-  </numatune>
+  <memory unit='KiB'>8388608</memory>
+  <currentMemory unit='KiB'>8388608</currentMemory>
+  <vcpu placement='static'>2</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -75,12 +72,6 @@ or other application using the libvirt API.
       <target dev='vdc' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </disk>
-    <disk type='file' device='cdrom'>
-      <driver name='qemu' type='raw'/>
-      <target dev='hda' bus='ide'/>
-      <readonly/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
-    </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
     </controller>
@@ -140,10 +131,6 @@ or other application using the libvirt API.
       <model type='qxl' ram='65536' vram='65536' vgamem='16384' heads='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
     </video>
-    <redirdev bus='usb' type='spicevmc'>
-    </redirdev>
-    <redirdev bus='usb' type='spicevmc'>
-    </redirdev>
     <memballoon model='virtio'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </memballoon>

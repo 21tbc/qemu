@@ -88,19 +88,6 @@ or other application using the libvirt API.
       <target dev='vdd' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0e' function='0x0'/>
     </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='writeback'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
-      </auth>
-      <source protocol='rbd' name='os-pool/fanwei_oa_db01_new_v01.img'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='vde' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0f' function='0x0'/>
-    </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
     </controller>
