@@ -1,25 +1,25 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit v3_db6
+  virsh edit app_dns+gateway
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>v3_db6</name>
-  <uuid>fa23bec8-f158-48e9-8329-8b9f32a1366c</uuid>
+  <name>app_dns+gateway</name>
+  <uuid>47613e3e-0c16-4ae0-ad56-33eb74bb9ebe</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
-  <memoryBacking>
-    <hugepages/>
-  </memoryBacking>
-  <vcpu placement='static'>2</vcpu>
+  <vcpu placement='auto' current='1'>2</vcpu>
+  <numatune>
+    <memory mode='strict' placement='auto'/>
+  </numatune>
   <resource>
     <partition>/machine</partition>
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <bootmenu enable='yes'/>
+    <bootmenu enable='no'/>
   </os>
   <features>
     <acpi/>
@@ -43,11 +43,11 @@ or other application using the libvirt API.
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/v3_db6.img'>
+      <source protocol='rbd' name='os-pool/app_dns_gateway.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -57,15 +57,21 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/v3_db6_data0.img'>
+      <source protocol='rbd' name='data-pool/app_dns_gateway_data0.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
+      <target dev='vdb' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
+    </disk>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='/var/lib/libvirt/swap/host01-1.qcow2'/>
       <target dev='vdc' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </disk>
@@ -98,10 +104,16 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:48:d9:43'/>
+      <mac address='52:54:00:a7:36:d9'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+    <interface type='bridge'>
+      <mac address='52:54:00:8a:bd:2f'/>
+      <source bridge='br0'/>
+      <model type='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </interface>
     <serial type='pty'>
       <target port='0'/>
@@ -115,6 +127,9 @@ or other application using the libvirt API.
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
+    <graphics type='spice' port='-1' autoport='no' listen='127.0.0.1'>
+      <listen type='address' address='127.0.0.1'/>
+    </graphics>
     <graphics type='vnc' port='-1' autoport='yes' listen='127.0.0.1'>
       <listen type='address' address='127.0.0.1'/>
     </graphics>
