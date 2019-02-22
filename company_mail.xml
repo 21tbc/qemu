@@ -56,12 +56,6 @@ or other application using the libvirt API.
       <target dev='vda' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
-    <disk type='file' device='disk'>
-      <driver name='qemu' type='qcow2' cache='none'/>
-      <source file='/var/lib/libvirt/swap/host01-5.qcow2'/>
-      <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
-    </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw' cache='none'/>
       <auth username='libvirt'>

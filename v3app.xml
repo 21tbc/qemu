@@ -1,15 +1,15 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit public_mail
+  virsh edit v3app
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>public_mail</name>
-  <uuid>e8bc99ea-6047-4a55-8a9d-7e6397e31b2a</uuid>
-  <memory unit='KiB'>8216576</memory>
-  <currentMemory unit='KiB'>8216576</currentMemory>
+  <name>v3app</name>
+  <uuid>14249833-febf-4d30-a2ad-2a985029ae60</uuid>
+  <memory unit='KiB'>16777216</memory>
+  <currentMemory unit='KiB'>16777216</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/public_mail_new.img'>
+      <source protocol='rbd' name='os-pool/v3_app5.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -56,12 +56,18 @@ or other application using the libvirt API.
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='/var/lib/libvirt/swap/host01-6.qcow2'/>
+      <target dev='vdb' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
+    </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw' cache='none' io='native'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/v3_app1_data0.img'>
+      <source protocol='rbd' name='data-pool/v3_app5_data0.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -98,13 +104,13 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:c0:d1:27'/>
+      <mac address='52:54:00:77:07:ae'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <interface type='bridge'>
-      <mac address='52:54:00:6c:69:fe'/>
+      <mac address='52:54:00:86:64:79'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
