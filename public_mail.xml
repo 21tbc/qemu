@@ -56,19 +56,6 @@ or other application using the libvirt API.
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
-      </auth>
-      <source protocol='rbd' name='data-pool/v3_app1_data0.img'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='vdc' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
-    </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
       <target dev='hda' bus='ide'/>
