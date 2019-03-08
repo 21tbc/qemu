@@ -16,7 +16,6 @@ or other application using the libvirt API.
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <boot dev='hd'/>
     <bootmenu enable='yes'/>
   </os>
   <features>
@@ -45,26 +44,27 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='13952292-3db5-4576-bec4-aeb971375ddd'/>
       </auth>
-      <source protocol='rbd' name='os-pool/02-27-v4lbox_haihe_convert.img'>
+      <source protocol='rbd' name='data-pool/02-27-v4lbox_haike_convert_data0.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vda' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+      <target dev='sda' bus='sata'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='13952292-3db5-4576-bec4-aeb971375ddd'/>
       </auth>
-      <source protocol='rbd' name='data-pool/02-27-v4lbox_haike_convert_data0.img'>
+      <source protocol='rbd' name='os-pool/02-27-v4lbox_haihe_convert.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
+      <target dev='sdb' bus='sata'/>
+      <boot order='1'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
@@ -93,6 +93,9 @@ or other application using the libvirt API.
     </controller>
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </controller>
+    <controller type='sata' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:6e:90:e0'/>
