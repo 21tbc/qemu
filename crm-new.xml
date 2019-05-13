@@ -98,8 +98,8 @@ or other application using the libvirt API.
       <mac address='52:54:00:b6:a7:52'/>
       <source bridge='br0'/>
       <bandwidth>
-        <inbound average='128000'/>
-        <outbound average='128000'/>
+        <inbound average='6500'/>
+        <outbound average='6500'/>
       </bandwidth>
       <model type='rtl8139'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
