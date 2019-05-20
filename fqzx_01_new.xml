@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit crm-new
+  virsh edit fqzx_01_new
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>crm-new</name>
+  <name>fqzx_01_new</name>
   <uuid>95ee898c-4c5b-4f21-ac10-4cbd868ad65b</uuid>
   <memory unit='KiB'>4194304</memory>
   <currentMemory unit='KiB'>4194304</currentMemory>
@@ -48,7 +48,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/crm_new.img'>
+      <source protocol='rbd' name='os-pool/fqzx_01_new.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -61,7 +61,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/crm_new_data01.img'>
+      <source protocol='rbd' name='data-pool/fqzx_01_new_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
