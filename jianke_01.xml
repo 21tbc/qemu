@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>jianke_01</name>
   <uuid>9dce9302-dc28-40f7-92f3-1a73da170695</uuid>
-  <memory unit='KiB'>65536000</memory>
-  <currentMemory unit='KiB'>65536000</currentMemory>
-  <vcpu placement='static'>12</vcpu>
+  <memory unit='KiB'>32768000</memory>
+  <currentMemory unit='KiB'>16384000</currentMemory>
+  <vcpu placement='static'>6</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/ctm155.img'>
+      <source protocol='rbd' name='os-pool/jianke_01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/ctm155_data01.img'>
+      <source protocol='rbd' name='data_pool/jianke_01_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
