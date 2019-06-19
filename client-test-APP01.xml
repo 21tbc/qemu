@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/ctm160.img'>
+      <source protocol='rbd' name='os-pool/client-test-APP01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/ctm160_data01.img'>
+      <source protocol='rbd' name='data-pool/client-test-APP01_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -101,17 +101,19 @@ or other application using the libvirt API.
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:55:e4:56'/>
-      <source bridge='br0'/>
-      <bandwidth>
-        <inbound average='128000'/>
-        <outbound average='128000'/>
-      </bandwidth>
+      <source bridge='sw1'/>
+      <virtualport type='openvswitch'>
+        <parameters interfaceid='728f9137-8cd9-480e-830c-415d6c973a77'/>
+      </virtualport>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <interface type='bridge'>
       <mac address='52:54:00:b8:ab:87'/>
-      <source bridge='br0'/>
+      <source bridge='sw1'/>
+      <virtualport type='openvswitch'>
+        <parameters interfaceid='00d95186-55c7-45c0-89d2-461e81b3ab4a'/>
+      </virtualport>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0c' function='0x0'/>
     </interface>

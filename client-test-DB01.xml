@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>client-test-DB01</name>
   <uuid>b4b0ea36-5187-4b38-884a-bc5298c49c73</uuid>
-  <memory unit='KiB'>65536000</memory>
-  <currentMemory unit='KiB'>65536000</currentMemory>
-  <vcpu placement='static'>12</vcpu>
+  <memory unit='KiB'>16777216</memory>
+  <currentMemory unit='KiB'>16777216</currentMemory>
+  <vcpu placement='static'>8</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/ctm160.img'>
+      <source protocol='rbd' name='os-pool/client-test-DB01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/ctm160_data01.img'>
+      <source protocol='rbd' name='data-pool/client-test-DB01_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -101,11 +101,10 @@ or other application using the libvirt API.
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:7f:73:13'/>
-      <source bridge='br0'/>
-      <bandwidth>
-        <inbound average='128000'/>
-        <outbound average='128000'/>
-      </bandwidth>
+      <source bridge='sw1'/>
+      <virtualport type='openvswitch'>
+        <parameters interfaceid='7bdda773-beb4-4dc2-b223-9ec7e14e20da'/>
+      </virtualport>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
