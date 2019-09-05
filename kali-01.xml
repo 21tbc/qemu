@@ -42,11 +42,18 @@ or other application using the libvirt API.
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
-    <disk type='file' device='disk'>
-      <driver name='qemu' type='qcow2'/>
-      <source file='/home/ceph-remote/kali-01.qcow2'/>
-      <target dev='hdc' bus='ide'/>
-      <address type='drive' controller='0' bus='1' target='0' unit='0'/>
+    <disk type='network' device='disk'>
+      <driver name='qemu' type='raw'/>
+      <auth username='libvirt'>
+        <secret type='ceph' uuid='c87e1e29-237c-4a13-93de-821e78e7c7df'/>
+      </auth>
+      <source protocol='rbd' name='os-pool/hv_kali_01.img'>
+        <host name='ceph101' port='6789'/>
+        <host name='ceph102' port='6789'/>
+        <host name='ceph103' port='6789'/>
+      </source>
+      <target dev='sda' bus='sata'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
@@ -69,6 +76,9 @@ or other application using the libvirt API.
     </controller>
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </controller>
+    <controller type='sata' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:8b:da:23'/>
