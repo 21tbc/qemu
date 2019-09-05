@@ -13,6 +13,7 @@ or other application using the libvirt API.
   <vcpu placement='static'>1</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
+    <boot dev='hd'/>
   </os>
   <features>
     <acpi/>
@@ -37,10 +38,8 @@ or other application using the libvirt API.
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/var/lib/libvirt/images/kali-linux-large-2019.3-amd64.iso'/>
       <target dev='hdb' bus='ide'/>
       <readonly/>
-      <boot order='1'/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
     <disk type='file' device='disk'>
