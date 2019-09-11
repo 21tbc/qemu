@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit yzj_backup01
+  virsh edit v5_sql_backup
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>yzj_backup01</name>
+  <name>v5_sql_backup</name>
   <uuid>5f957d26-8797-4ff2-9b9e-54c3a3b14f97</uuid>
   <memory unit='KiB'>8192000</memory>
   <currentMemory unit='KiB'>8192000</currentMemory>
@@ -117,6 +117,15 @@ or other application using the libvirt API.
       </virtualport>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+    <interface type='bridge'>
+      <mac address='52:54:00:39:ff:02'/>
+      <source bridge='sw1'/>
+      <virtualport type='openvswitch'>
+        <parameters interfaceid='0e4a45e1-ea9b-4ea5-9df3-6fac5b300e82'/>
+      </virtualport>
+      <model type='rtl8139'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x0c' function='0x0'/>
     </interface>
     <serial type='pty'>
       <target port='0'/>
