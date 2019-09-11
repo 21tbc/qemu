@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>eln218</name>
   <uuid>1824c8cf-c71b-47aa-98da-0372e0f2cd47</uuid>
-  <memory unit='KiB'>131072000</memory>
-  <currentMemory unit='KiB'>131072000</currentMemory>
-  <vcpu placement='static'>16</vcpu>
+  <memory unit='KiB'>122880000</memory>
+  <currentMemory unit='KiB'>122880000</currentMemory>
+  <vcpu placement='static'>32</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
