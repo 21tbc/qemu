@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit eln216
+  virsh edit eln218
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>eln216</name>
-  <uuid>8d77a8d4-c168-4cf4-9f37-3cda7ef624c7</uuid>
+  <name>eln218</name>
+  <uuid>1824c8cf-c71b-47aa-98da-0372e0f2cd47</uuid>
   <memory unit='KiB'>131072000</memory>
   <currentMemory unit='KiB'>131072000</currentMemory>
   <vcpu placement='static'>16</vcpu>
@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/eln216.img'>
+      <source protocol='rbd' name='os-pool/eln218.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/eln216_data01.img'>
+      <source protocol='rbd' name='data-pool/eln218_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -100,7 +100,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:51:e8:55'/>
+      <mac address='52:54:00:fa:ec:83'/>
       <source bridge='br0'/>
       <bandwidth>
         <inbound average='128000'/>
