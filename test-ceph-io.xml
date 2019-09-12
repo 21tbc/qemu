@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit test_2019_09_12
+  virsh edit test-ceph-io
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>test_2019_09_12</name>
+  <name>test-ceph-io</name>
   <uuid>35ee5ef4-a5d1-4d75-bcd3-391488ca0442</uuid>
   <memory unit='KiB'>4194304</memory>
   <currentMemory unit='KiB'>4194304</currentMemory>
