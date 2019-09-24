@@ -133,5 +133,4 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </memballoon>
   </devices>
-  <seclabel type='dynamic' model='apparmor' relabel='yes'/>
 </domain>
