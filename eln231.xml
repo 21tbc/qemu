@@ -41,7 +41,7 @@ or other application using the libvirt API.
     <suspend-to-disk enabled='no'/>
   </pm>
   <devices>
-    <emulator>/usr/bin/kvm-spice</emulator>
+    <emulator>/usr/bin/qemu-system-x86_64-spice</emulator>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
       <auth username='libvirt'>
