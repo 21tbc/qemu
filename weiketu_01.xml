@@ -101,8 +101,8 @@ or other application using the libvirt API.
         <parameters interfaceid='fdfabf59-45e3-42eb-9234-b77dae13d92f'/>
       </virtualport>
       <bandwidth>
-        <inbound average='3000'/>
-        <outbound average='3000'/>
+        <inbound average='2500'/>
+        <outbound average='2500'/>
       </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
