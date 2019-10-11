@@ -115,6 +115,10 @@ or other application using the libvirt API.
       <virtualport type='openvswitch'>
         <parameters interfaceid='00b35a7f-9974-4cae-9d33-a6626080962e'/>
       </virtualport>
+      <bandwidth>
+        <inbound average='1280'/>
+        <outbound average='1280'/>
+      </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
