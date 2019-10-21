@@ -1,16 +1,16 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit ctm167
+  virsh edit v4_pre102
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>ctm167</name>
+  <name>v4_pre102</name>
   <uuid>b94e96e7-0c05-41f2-b6ae-a2ca16c26153</uuid>
-  <memory unit='KiB'>65536000</memory>
-  <currentMemory unit='KiB'>65536000</currentMemory>
-  <vcpu placement='static'>12</vcpu>
+  <memory unit='KiB'>32768000</memory>
+  <currentMemory unit='KiB'>32768000</currentMemory>
+  <vcpu placement='static'>24</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
