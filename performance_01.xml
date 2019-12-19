@@ -55,6 +55,7 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
+      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
@@ -62,7 +63,6 @@ or other application using the libvirt API.
       <source file='/var/lib/libvirt/images/cn_windows_10_business_editions_version_1909_x64_dvd_0ca83907.iso'/>
       <target dev='hda' bus='ide'/>
       <readonly/>
-      <boot order='1'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <disk type='file' device='cdrom'>
@@ -116,6 +116,10 @@ or other application using the libvirt API.
       <target type='virtio' name='com.redhat.spice.0'/>
       <address type='virtio-serial' controller='0' bus='0' port='1'/>
     </channel>
+    <input type='keyboard' bus='virtio'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+    </input>
+    <input type='mouse' bus='usb'/>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
     <graphics type='vnc' port='-1' autoport='yes' listen='127.0.0.1'>
