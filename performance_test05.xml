@@ -88,7 +88,7 @@ or other application using the libvirt API.
         <inbound average='128000'/>
         <outbound average='128000'/>
       </bandwidth>
-      <model type='virtio'/>
+      <model type='rtl8139'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <serial type='pty'>
