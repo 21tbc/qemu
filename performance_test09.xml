@@ -46,7 +46,7 @@ or other application using the libvirt API.
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
-        <secret type='ceph' uuid='d212292d-470b-4810-9f7e-f8c71a2966e9'/>
+        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
       <source protocol='rbd' name='os-pool2/performance_test09.img'>
         <host name='ceph101' port='6789'/>
