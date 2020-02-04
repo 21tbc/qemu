@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>tmp3</name>
   <uuid>4216134e-1e8f-4c7e-b3d7-2ed019360281</uuid>
-  <memory unit='KiB'>104857600</memory>
-  <currentMemory unit='KiB'>104857600</currentMemory>
+  <memory unit='KiB'>67108864</memory>
+  <currentMemory unit='KiB'>67108864</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
