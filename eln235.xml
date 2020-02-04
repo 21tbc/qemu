@@ -1,15 +1,15 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit tmp1
+  virsh edit eln235
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>tmp1</name>
-  <uuid>d9264a12-657e-4247-a3fe-4ae3a4f5ba30</uuid>
-  <memory unit='KiB'>134217728</memory>
-  <currentMemory unit='KiB'>134217728</currentMemory>
+  <name>eln235</name>
+  <uuid>edc062fc-9900-45ca-b727-013801927075</uuid>
+  <memory unit='KiB'>67108864</memory>
+  <currentMemory unit='KiB'>67108864</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/eln231.img'>
+      <source protocol='rbd' name='os-pool2/eln235.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -61,7 +61,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/eln231_data01.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/eln235_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -98,7 +98,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:5f:0c:ac'/>
+      <mac address='52:54:00:98:d9:30'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>

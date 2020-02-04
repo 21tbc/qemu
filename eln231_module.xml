@@ -1,15 +1,15 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit tmp2
+  virsh edit eln231_module
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>tmp2</name>
-  <uuid>edc062fc-9900-45ca-b727-013801927075</uuid>
-  <memory unit='KiB'>67108864</memory>
-  <currentMemory unit='KiB'>67108864</currentMemory>
+  <name>eln231_module</name>
+  <uuid>3c0b1aa6-d417-4d68-b354-1985c2d83a0d</uuid>
+  <memory unit='KiB'>104857600</memory>
+  <currentMemory unit='KiB'>104857600</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
@@ -98,7 +98,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:98:d9:30'/>
+      <mac address='52:54:00:2b:1a:77'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
