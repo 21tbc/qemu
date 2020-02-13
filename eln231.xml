@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>eln231</name>
   <uuid>d9264a12-657e-4247-a3fe-4ae3a4f5ba30</uuid>
-  <memory unit='KiB'>65536000</memory>
-  <currentMemory unit='KiB'>65536000</currentMemory>
+  <memory unit='KiB'>131072000</memory>
+  <currentMemory unit='KiB'>131072000</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
