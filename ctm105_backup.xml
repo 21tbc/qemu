@@ -27,7 +27,9 @@ or other application using the libvirt API.
       <spinlocks state='on' retries='4096'/>
     </hyperv>
   </features>
-  <cpu mode='host-passthrough'/>
+  <cpu mode='host-model'>
+    <model fallback='allow'/>
+  </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='delay'/>
