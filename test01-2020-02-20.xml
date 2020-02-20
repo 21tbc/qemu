@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit test02-2020-02-20
+  virsh edit test01-2020-02-20
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>test02-2020-02-20</name>
-  <uuid>c5400a8e-5478-4ffb-a28d-eb77e8bcd173</uuid>
+  <name>test01-2020-02-20</name>
+  <uuid>37613e3e-0c16-4ae0-ad56-33eb74bb9ebe</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
   <vcpu placement='static'>24</vcpu>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool2/test02-2020-02-20.img'>
+      <source protocol='rbd' name='os-pool2/test01-2020-02-20.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -82,7 +82,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:91:54:e8'/>
+      <mac address='52:54:00:f1:59:6a'/>
       <source bridge='br0'/>
       <model type='rtl8139'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
