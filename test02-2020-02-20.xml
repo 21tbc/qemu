@@ -10,7 +10,7 @@ or other application using the libvirt API.
   <uuid>c5400a8e-5478-4ffb-a28d-eb77e8bcd173</uuid>
   <memory unit='KiB'>8216576</memory>
   <currentMemory unit='KiB'>8216576</currentMemory>
-  <vcpu placement='static'>1</vcpu>
+  <vcpu placement='static'>24</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -27,9 +27,7 @@ or other application using the libvirt API.
       <spinlocks state='on' retries='4096'/>
     </hyperv>
   </features>
-  <cpu mode='host-model'>
-    <model fallback='allow'/>
-  </cpu>
+  <cpu mode='host-passthrough'/>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='delay'/>
@@ -49,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/cobbler.img'>
+      <source protocol='rbd' name='os-pool2/test02-2020-02-20.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
