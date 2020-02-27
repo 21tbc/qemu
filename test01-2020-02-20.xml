@@ -10,7 +10,7 @@ or other application using the libvirt API.
   <uuid>37613e3e-0c16-4ae0-ad56-33eb74bb9ebe</uuid>
   <memory unit='KiB'>8290304</memory>
   <currentMemory unit='KiB'>8290304</currentMemory>
-  <vcpu placement='static'>4</vcpu>
+  <vcpu placement='static'>1</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -28,7 +28,7 @@ or other application using the libvirt API.
     </hyperv>
   </features>
   <cpu mode='host-passthrough'>
-    <topology sockets='2' cores='2' threads='1'/>
+    <topology sockets='1' cores='1' threads='1'/>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
