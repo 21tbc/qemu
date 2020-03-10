@@ -1,16 +1,16 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit tmp2
+  virsh edit hebaofeng_test01
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>tmp2</name>
+  <name>hebaofeng_test01</name>
   <uuid>911bc857-84ad-4dd9-800b-a31d13e4bfaa</uuid>
   <memory unit='KiB'>8290304</memory>
   <currentMemory unit='KiB'>8290304</currentMemory>
-  <vcpu placement='static'>12</vcpu>
+  <vcpu placement='static'>8</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='libvirt-pool/templete-sa-centos-recompiled-7.2.image'>
+      <source protocol='rbd' name='os-pool2/hebaofeng_test01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
