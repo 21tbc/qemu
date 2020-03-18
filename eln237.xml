@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit test01-2020-02-20
+  virsh edit eln237
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>test01-2020-02-20</name>
+  <name>eln237</name>
   <uuid>37613e3e-0c16-4ae0-ad56-33eb74bb9ebe</uuid>
   <memory unit='KiB'>134217728</memory>
   <currentMemory unit='KiB'>134217728</currentMemory>
