@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>ctm168</name>
   <uuid>54560644-9a75-499f-82b7-2c5cb07fd024</uuid>
-  <memory unit='KiB'>67108864</memory>
-  <currentMemory unit='KiB'>67108864</currentMemory>
-  <vcpu placement='static'>12</vcpu>
+  <memory unit='KiB'>32768000</memory>
+  <currentMemory unit='KiB'>32768000</currentMemory>
+  <vcpu placement='static'>8</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
