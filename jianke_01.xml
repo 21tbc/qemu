@@ -9,7 +9,7 @@ or other application using the libvirt API.
   <name>jianke_01</name>
   <uuid>9dce9302-dc28-40f7-92f3-1a73da170695</uuid>
   <memory unit='KiB'>32768000</memory>
-  <currentMemory unit='KiB'>16384000</currentMemory>
+  <currentMemory unit='KiB'>32768000</currentMemory>
   <vcpu placement='static'>6</vcpu>
   <resource>
     <partition>/machine</partition>
