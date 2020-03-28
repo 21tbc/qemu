@@ -46,7 +46,7 @@ or other application using the libvirt API.
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
-        <secret type='ceph' uuid='9f1ff9bb-bae4-4f40-9e4a-6db13b5b2db9'/>
+        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
       <source protocol='rbd' name='os-pool/checking_in.img'>
         <host name='ceph101' port='6789'/>
@@ -59,7 +59,7 @@ or other application using the libvirt API.
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
-        <secret type='ceph' uuid='9f1ff9bb-bae4-4f40-9e4a-6db13b5b2db9'/>
+        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
       <source protocol='rbd' name='data-pool/checking_in_data01.img'>
         <host name='ceph101' port='6789'/>
