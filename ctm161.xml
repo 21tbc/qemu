@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit ctm155
+  virsh edit ctm161
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>ctm155</name>
-  <uuid>df374e41-65ac-4f89-bfca-22bc9c7bc785</uuid>
+  <name>ctm161</name>
+  <uuid>e36d7382-f803-4b03-8b5a-c03066acea2f</uuid>
   <memory unit='KiB'>131072000</memory>
   <currentMemory unit='KiB'>131072000</currentMemory>
   <vcpu placement='static'>24</vcpu>
@@ -27,7 +27,9 @@ or other application using the libvirt API.
       <spinlocks state='on' retries='4096'/>
     </hyperv>
   </features>
-  <cpu mode='host-passthrough'/>
+  <cpu mode='host-model'>
+    <model fallback='allow'/>
+  </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='delay'/>
@@ -47,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/ctm155.img'>
+      <source protocol='rbd' name='os-pool/ctm161.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -61,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/ctm155_data01.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/ctm161_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -98,7 +100,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:7d:2a:76'/>
+      <mac address='52:54:00:53:10:6f'/>
       <source bridge='br0'/>
       <bandwidth>
         <inbound average='128000'/>
