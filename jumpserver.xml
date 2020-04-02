@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit bef105
+  virsh edit jumpserver
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>bef105</name>
+  <name>jumpserver</name>
   <uuid>c1d5fb4b-6e86-403a-847e-07f1bb4b390f</uuid>
   <memory unit='KiB'>32768000</memory>
   <currentMemory unit='KiB'>32768000</currentMemory>
@@ -49,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/bef105.img'>
+      <source protocol='rbd' name='os-pool/jumpserver.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -63,7 +63,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/bef105_data01.img'>
+      <source protocol='rbd' name='data-pool/jumpserver_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
