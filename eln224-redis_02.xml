@@ -9,10 +9,7 @@ or other application using the libvirt API.
   <name>eln224-redis_02</name>
   <uuid>d32d1564-7145-42ed-b0a5-9e4553152cfa</uuid>
   <memory unit='KiB'>32768000</memory>
-  <currentMemory unit='KiB'>32768000</currentMemory>
-  <memoryBacking>
-    <hugepages/>
-  </memoryBacking>
+  <currentMemory unit='KiB'>8388608</currentMemory>
   <vcpu placement='static'>12</vcpu>
   <resource>
     <partition>/machine</partition>
@@ -25,9 +22,6 @@ or other application using the libvirt API.
     <acpi/>
     <apic/>
   </features>
-  <cpu mode='host-model'>
-    <model fallback='allow'/>
-  </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='delay'/>
