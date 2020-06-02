@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>rsfw118</name>
   <uuid>ebc48c11-75e6-4164-8280-045af8e214e3</uuid>
-  <memory unit='KiB'>33554432</memory>
-  <currentMemory unit='KiB'>33554432</currentMemory>
+  <memory unit='KiB'>67108864</memory>
+  <currentMemory unit='KiB'>67108864</currentMemory>
   <vcpu placement='static'>24</vcpu>
   <resource>
     <partition>/machine</partition>
