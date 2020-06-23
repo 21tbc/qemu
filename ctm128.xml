@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>ctm128</name>
   <uuid>771b7703-6b40-4a78-abe7-00449cda07e6</uuid>
-  <memory unit='KiB'>65535000</memory>
-  <currentMemory unit='KiB'>65535000</currentMemory>
+  <memory unit='KiB'>131072000</memory>
+  <currentMemory unit='KiB'>131072000</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
