@@ -8,12 +8,12 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>public_mail</name>
   <uuid>e8bc99ea-6047-4a55-8a9d-7e6397e31b2a</uuid>
-  <memory unit='KiB'>8216576</memory>
-  <currentMemory unit='KiB'>8216576</currentMemory>
+  <memory unit='KiB'>10240000</memory>
+  <currentMemory unit='KiB'>10240000</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
-  <vcpu placement='static'>2</vcpu>
+  <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>

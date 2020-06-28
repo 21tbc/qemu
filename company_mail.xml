@@ -9,11 +9,11 @@ or other application using the libvirt API.
   <name>company_mail</name>
   <uuid>44cc5221-37ba-4dc3-916b-e8269be85a19</uuid>
   <memory unit='KiB'>10485760</memory>
-  <currentMemory unit='KiB'>8216576</currentMemory>
+  <currentMemory unit='KiB'>10485760</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
-  <vcpu placement='static'>2</vcpu>
+  <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
