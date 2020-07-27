@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>performance_test14</name>
   <uuid>b63c8f4b-f3c5-4056-94bf-6f56602c31f4</uuid>
-  <memory unit='KiB'>8290304</memory>
-  <currentMemory unit='KiB'>8290304</currentMemory>
+  <memory unit='KiB'>16384000</memory>
+  <currentMemory unit='KiB'>16384000</currentMemory>
   <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
