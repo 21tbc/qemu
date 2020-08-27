@@ -40,8 +40,8 @@ or other application using the libvirt API.
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
       <source file='/big_data/big_data0-template.qcow2'/>
-      <target dev='hda' bus='ide'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+      <target dev='vda' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
@@ -89,7 +89,7 @@ or other application using the libvirt API.
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
-    <graphics type='spice' autoport='yes'/>
+    <graphics type='vnc' port='-1' autoport='yes'/>
     <sound model='ich6'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </sound>
