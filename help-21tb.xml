@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>help-21tb</name>
   <uuid>7b069551-32e1-490c-b5a4-105a5c6437f8</uuid>
-  <memory unit='KiB'>4096</memory>
-  <currentMemory unit='KiB'>4096</currentMemory>
+  <memory unit='KiB'>4194304</memory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
   <vcpu placement='static'>2</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
