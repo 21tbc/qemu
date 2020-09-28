@@ -13,7 +13,7 @@ or other application using the libvirt API.
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
-  <vcpu placement='static'>4</vcpu>
+  <vcpu placement='static'>24</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
