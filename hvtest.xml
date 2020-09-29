@@ -13,7 +13,7 @@ or other application using the libvirt API.
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
-  <vcpu placement='static'>2</vcpu>
+  <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -27,6 +27,7 @@ or other application using the libvirt API.
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
+    <topology sockets='1' cores='4' threads='1'/>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
