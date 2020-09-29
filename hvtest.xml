@@ -47,23 +47,16 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool/hv_test_new.img'>
+      <source protocol='rbd' name='data-pool/hv_data1.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vda' bus='virtio'/>
-      <boot order='1'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
-    </disk>
-    <disk type='file' device='disk'>
-      <driver name='qemu' type='qcow2' cache='writeback'/>
-      <source file='/var/lib/libvirt/swap/host01-4.qcow2'/>
-      <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
+      <target dev='sda' bus='scsi'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
@@ -72,21 +65,28 @@ or other application using the libvirt API.
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vdc' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
+      <target dev='sdb' bus='scsi'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
+    </disk>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2' cache='none' discard='unmap'/>
+      <source file='/var/lib/libvirt/swap/host01-4.qcow2'/>
+      <target dev='sdc' bus='scsi'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='2'/>
     </disk>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/hv_data1.img'>
+      <source protocol='rbd' name='os-pool/hv_test_new.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vdd' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0e' function='0x0'/>
+      <target dev='vda' bus='virtio'/>
+      <boot order='1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
@@ -109,6 +109,9 @@ or other application using the libvirt API.
     </controller>
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </controller>
+    <controller type='scsi' index='0' model='virtio-scsi'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x0e' function='0x0'/>
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:57:df:ec'/>
