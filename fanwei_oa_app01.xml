@@ -29,7 +29,7 @@ or other application using the libvirt API.
   <cpu mode='host-model'>
     <model fallback='allow'/>
   </cpu>
-  <clock offset='utc'>
+  <clock offset='localtime'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='delay'/>
     <timer name='hpet' present='no'/>
