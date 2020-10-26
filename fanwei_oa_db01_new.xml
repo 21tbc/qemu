@@ -13,7 +13,7 @@ or other application using the libvirt API.
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
-  <vcpu placement='static'>4</vcpu>
+  <vcpu placement='static'>16</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -27,7 +27,6 @@ or other application using the libvirt API.
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
-    <topology sockets='4' cores='1' threads='1'/>
   </cpu>
   <clock offset='localtime'>
     <timer name='rtc' tickpolicy='catchup'/>
@@ -49,6 +48,19 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
+      <source protocol='rbd' name='data-pool/fanwei_oa_db01_data01_new_v01.img'>
+        <host name='ceph101' port='6789'/>
+        <host name='ceph102' port='6789'/>
+        <host name='ceph103' port='6789'/>
+      </source>
+      <target dev='sda' bus='scsi'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+    </disk>
+    <disk type='network' device='disk'>
+      <driver name='qemu' type='raw'/>
+      <auth username='libvirt'>
+        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
+      </auth>
       <source protocol='rbd' name='os-pool/fanwei_oa_db01_new_v02.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
@@ -64,19 +76,6 @@ or other application using the libvirt API.
       <target dev='hdc' bus='ide'/>
       <readonly/>
       <address type='drive' controller='0' bus='1' target='0' unit='0'/>
-    </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
-      </auth>
-      <source protocol='rbd' name='data-pool/fanwei_oa_db01_data01_new_v01.img'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='sda' bus='scsi'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
