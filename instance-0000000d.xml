@@ -1,18 +1,18 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit instance-0000000a
+  virsh edit instance-0000000d
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>instance-0000000a</name>
-  <uuid>6ad1f1df-dc3e-4b99-a79d-fca34db856f3</uuid>
+  <name>instance-0000000d</name>
+  <uuid>9945fbf5-c240-4ad6-8b86-12e5de7c762b</uuid>
   <metadata>
     <nova:instance xmlns:nova="http://openstack.org/xmlns/libvirt/nova/1.0">
       <nova:package version="18.3.0"/>
       <nova:name>test1</nova:name>
-      <nova:creationTime>2020-11-24 03:18:23</nova:creationTime>
+      <nova:creationTime>2020-11-24 04:56:20</nova:creationTime>
       <nova:flavor name="4c-8g">
         <nova:memory>8192</nova:memory>
         <nova:disk>40</nova:disk>
@@ -38,7 +38,7 @@ or other application using the libvirt API.
       <entry name='product'>OpenStack Nova</entry>
       <entry name='version'>18.3.0</entry>
       <entry name='serial'>ec17e9d4-de53-4614-889b-ec4466fe7c1a</entry>
-      <entry name='uuid'>6ad1f1df-dc3e-4b99-a79d-fca34db856f3</entry>
+      <entry name='uuid'>9945fbf5-c240-4ad6-8b86-12e5de7c762b</entry>
       <entry name='family'>Virtual Machine</entry>
     </system>
   </sysinfo>
@@ -70,7 +70,7 @@ or other application using the libvirt API.
       <auth username='cinder'>
         <secret type='ceph' uuid='0b08e6a3-2efc-4dd2-9ab5-b2debb62458c'/>
       </auth>
-      <source protocol='rbd' name='vms/6ad1f1df-dc3e-4b99-a79d-fca34db856f3_disk.config'>
+      <source protocol='rbd' name='vms/9945fbf5-c240-4ad6-8b86-12e5de7c762b_disk.config'>
         <host name='172.16.1.1' port='6789'/>
         <host name='172.16.1.2' port='6789'/>
         <host name='172.16.1.3' port='6789'/>
@@ -86,7 +86,7 @@ or other application using the libvirt API.
       <auth username='cinder'>
         <secret type='ceph' uuid='0b08e6a3-2efc-4dd2-9ab5-b2debb62458c'/>
       </auth>
-      <source protocol='rbd' name='volumes/volume-22783b1b-bfb5-4ba3-ae80-66e05098d65d'>
+      <source protocol='rbd' name='volumes/volume-1f47f6c4-c59b-4f1f-bbc9-9cfe531e05a0'>
         <host name='172.16.1.1' port='6789'/>
         <host name='172.16.1.2' port='6789'/>
         <host name='172.16.1.3' port='6789'/>
@@ -94,7 +94,7 @@ or other application using the libvirt API.
         <host name='172.16.1.113' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
-      <serial>22783b1b-bfb5-4ba3-ae80-66e05098d65d</serial>
+      <serial>1f47f6c4-c59b-4f1f-bbc9-9cfe531e05a0</serial>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='piix3-uhci'>
@@ -108,25 +108,33 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='fa:16:3e:07:89:1e'/>
+      <mac address='fa:16:3e:d7:7d:53'/>
       <source bridge='brqa4e85303-ae'/>
-      <target dev='tap9a8994a7-71'/>
+      <target dev='tap53e031af-7a'/>
       <model type='virtio'/>
       <mtu size='1450'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
+    <interface type='bridge'>
+      <mac address='fa:16:3e:21:26:6a'/>
+      <source bridge='brq16ae272a-8e'/>
+      <target dev='tapfda267d0-b2'/>
+      <model type='virtio'/>
+      <mtu size='1500'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+    </interface>
     <serial type='pty'>
-      <log file='/var/lib/nova/instances/6ad1f1df-dc3e-4b99-a79d-fca34db856f3/console.log' append='off'/>
+      <log file='/var/lib/nova/instances/9945fbf5-c240-4ad6-8b86-12e5de7c762b/console.log' append='off'/>
       <target type='isa-serial' port='0'>
         <model name='isa-serial'/>
       </target>
     </serial>
     <console type='pty'>
-      <log file='/var/lib/nova/instances/6ad1f1df-dc3e-4b99-a79d-fca34db856f3/console.log' append='off'/>
+      <log file='/var/lib/nova/instances/9945fbf5-c240-4ad6-8b86-12e5de7c762b/console.log' append='off'/>
       <target type='serial' port='0'/>
     </console>
     <channel type='unix'>
-      <source mode='bind' path='/var/lib/libvirt/qemu/org.qemu.guest_agent.0.instance-0000000a.sock'/>
+      <source mode='bind' path='/var/lib/libvirt/qemu/org.qemu.guest_agent.0.instance-0000000d.sock'/>
       <target type='virtio' name='org.qemu.guest_agent.0'/>
       <address type='virtio-serial' controller='0' bus='0' port='1'/>
     </channel>
