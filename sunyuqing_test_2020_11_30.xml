@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>sunyuqing_test_2020_11_30</name>
   <uuid>7b470ea3-ecf0-4246-9cce-4b0302160a94</uuid>
-  <memory unit='KiB'>8290304</memory>
-  <currentMemory unit='KiB'>8290304</currentMemory>
-  <vcpu placement='static'>4</vcpu>
+  <memory unit='KiB'>8388608</memory>
+  <currentMemory unit='KiB'>8388608</currentMemory>
+  <vcpu placement='static' current='4'>8</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -27,7 +27,9 @@ or other application using the libvirt API.
       <spinlocks state='on' retries='4096'/>
     </hyperv>
   </features>
-  <cpu mode='host-passthrough'/>
+  <cpu mode='host-passthrough'>
+    <topology sockets='4' cores='2' threads='1'/>
+  </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='delay'/>
@@ -47,7 +49,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool2/hebaofeng_test01.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/sunyuqing_test_2020_11_30.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
