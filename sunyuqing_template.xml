@@ -83,7 +83,7 @@ or other application using the libvirt API.
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:04:20:79'/>
-      <source bridge='br0'/>
+      <source bridge='host-only'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
@@ -99,12 +99,7 @@ or other application using the libvirt API.
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
-    <graphics type='spice' port='-1' autoport='no' listen='127.0.0.1'>
-      <listen type='address' address='127.0.0.1'/>
-    </graphics>
-    <graphics type='vnc' port='-1' autoport='yes' listen='127.0.0.1'>
-      <listen type='address' address='127.0.0.1'/>
-    </graphics>
+    <graphics type='vnc' port='-1' autoport='yes'/>
     <sound model='ich6'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </sound>
