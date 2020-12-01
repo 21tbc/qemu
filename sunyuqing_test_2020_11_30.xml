@@ -97,8 +97,8 @@ or other application using the libvirt API.
       <mac address='52:54:00:47:a4:4c'/>
       <source bridge='br0'/>
       <bandwidth>
-        <inbound average='400'/>
-        <outbound average='400'/>
+        <inbound average='650'/>
+        <outbound average='650'/>
       </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
