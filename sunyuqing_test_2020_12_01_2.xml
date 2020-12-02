@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>sunyuqing_test_2020_12_01_2</name>
   <uuid>5c33f404-7155-4688-8731-591a341cf9d5</uuid>
-  <memory unit='KiB'>8290304</memory>
-  <currentMemory unit='KiB'>8290304</currentMemory>
-  <vcpu placement='static'>8</vcpu>
+  <memory unit='KiB'>1048576</memory>
+  <currentMemory unit='KiB'>1048576</currentMemory>
+  <vcpu placement='static'>1</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
