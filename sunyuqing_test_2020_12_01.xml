@@ -83,7 +83,7 @@ or other application using the libvirt API.
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:51:6d:50'/>
-      <source bridge='br0'/>
+      <source bridge='host-only'/>
       <bandwidth>
         <inbound average='400'/>
         <outbound average='400'/>
