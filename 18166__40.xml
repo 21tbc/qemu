@@ -1,16 +1,16 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit sunyuqing_test_2020_12_01_3
+  virsh edit 18166__40
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>sunyuqing_test_2020_12_01_3</name>
+  <name>18166__40</name>
   <uuid>6ee5041f-d3e1-4080-8c8d-d7a6fa8ffdef</uuid>
-  <memory unit='KiB'>8290304</memory>
-  <currentMemory unit='KiB'>8290304</currentMemory>
-  <vcpu placement='static'>8</vcpu>
+  <memory unit='KiB'>1048576</memory>
+  <currentMemory unit='KiB'>1048576</currentMemory>
+  <vcpu placement='static'>1</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/sunyuqing_test_2020_12_01_3.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/18166__40.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -84,6 +84,10 @@ or other application using the libvirt API.
     <interface type='bridge'>
       <mac address='52:54:00:67:0a:92'/>
       <source bridge='host-only'/>
+      <bandwidth>
+        <inbound average='390'/>
+        <outbound average='390'/>
+      </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
