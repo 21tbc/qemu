@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>big_data04</name>
   <uuid>77f43998-ce4b-46f0-943c-53ae745e2ef0</uuid>
-  <memory unit='KiB'>33554432</memory>
-  <currentMemory unit='KiB'>33554432</currentMemory>
+  <memory unit='KiB'>67108864</memory>
+  <currentMemory unit='KiB'>67108864</currentMemory>
   <vcpu placement='static'>16</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
@@ -39,7 +39,7 @@ or other application using the libvirt API.
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
-      <source file='/big_data/big_data04-os.qcow2'/>
+      <source file='/big_data2/big_data04-os.qcow2'/>
       <target dev='hda' bus='ide'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
@@ -51,7 +51,7 @@ or other application using the libvirt API.
     </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
-      <source file='/big_data/big_data04-data.qcow2'/>
+      <source file='/big_data2/big_data04-data.qcow2'/>
       <target dev='hdc' bus='ide'/>
       <address type='drive' controller='0' bus='1' target='0' unit='0'/>
     </disk>
