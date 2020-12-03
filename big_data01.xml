@@ -51,7 +51,7 @@ or other application using the libvirt API.
     </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
-      <source file='/big_data/big_data01-data.qcow2'/>
+      <source file='/big_data2/big_data01-data.qcow2'/>
       <target dev='hdc' bus='ide'/>
       <address type='drive' controller='0' bus='1' target='0' unit='0'/>
     </disk>
