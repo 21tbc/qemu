@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit sunyuqing_template
+  virsh edit jiang2
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>sunyuqing_template</name>
-  <uuid>d2493fcc-34a9-42b1-ae93-6024c85e3d76</uuid>
+  <name>jiang2</name>
+  <uuid>02a7f414-cdff-4be6-b6a6-a9f9f942155b</uuid>
   <memory unit='KiB'>1048576</memory>
   <currentMemory unit='KiB'>1048576</currentMemory>
   <vcpu placement='static'>1</vcpu>
@@ -82,10 +82,10 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:04:20:79'/>
+      <mac address='52:54:00:9e:8c:5c'/>
       <source bridge='host-only'/>
       <bandwidth>
-        <inbound average='1000'/>
+        <inbound average='1500'/>
         <outbound average='400'/>
       </bandwidth>
       <model type='virtio'/>
