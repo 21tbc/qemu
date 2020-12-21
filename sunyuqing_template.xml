@@ -83,9 +83,9 @@ or other application using the libvirt API.
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:04:20:79'/>
-      <source bridge='br0'/>
+      <source bridge='host-only'/>
       <bandwidth>
-        <inbound average='400'/>
+        <inbound average='1000'/>
         <outbound average='400'/>
       </bandwidth>
       <model type='virtio'/>
