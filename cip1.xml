@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>cip1</name>
   <uuid>6c1fcb0e-a3b9-48ca-ab78-8883c1495bc7</uuid>
-  <memory unit='KiB'>1048576</memory>
-  <currentMemory unit='KiB'>1048576</currentMemory>
-  <vcpu placement='static'>1</vcpu>
+  <memory unit='KiB'>4194304</memory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
+  <vcpu placement='static'>2</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
