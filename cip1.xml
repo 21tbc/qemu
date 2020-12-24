@@ -86,7 +86,7 @@ or other application using the libvirt API.
       <source bridge='host-only'/>
       <bandwidth>
         <inbound average='1000'/>
-        <outbound average='400'/>
+        <outbound average='1000'/>
       </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
