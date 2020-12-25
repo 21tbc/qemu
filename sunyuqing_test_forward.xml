@@ -85,8 +85,8 @@ or other application using the libvirt API.
       <mac address='52:54:00:57:c3:8e'/>
       <source bridge='br0'/>
       <bandwidth>
-        <inbound average='1000'/>
-        <outbound average='400'/>
+        <inbound average='5000'/>
+        <outbound average='5000'/>
       </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
@@ -94,6 +94,10 @@ or other application using the libvirt API.
     <interface type='bridge'>
       <mac address='52:54:00:76:5a:ad'/>
       <source bridge='br0'/>
+      <bandwidth>
+        <inbound average='5000'/>
+        <outbound average='5000'/>
+      </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </interface>
