@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit sunyuqing_template
+  virsh edit docker-01
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>sunyuqing_template</name>
-  <uuid>d2493fcc-34a9-42b1-ae93-6024c85e3d76</uuid>
+  <name>docker-01</name>
+  <uuid>893f0d52-4b07-4d48-908a-e6e2de0fbf1e</uuid>
   <memory unit='KiB'>1048576</memory>
   <currentMemory unit='KiB'>1048576</currentMemory>
   <vcpu placement='static'>1</vcpu>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/jang2.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/docker_01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -82,7 +82,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:04:20:79'/>
+      <mac address='52:54:00:44:03:b4'/>
       <source bridge='host-only'/>
       <bandwidth>
         <inbound average='2000'/>
