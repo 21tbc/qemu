@@ -8,9 +8,9 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>docker-10</name>
   <uuid>a9cf8676-efd4-442f-86f0-194b7ad981c0</uuid>
-  <memory unit='KiB'>1048576</memory>
-  <currentMemory unit='KiB'>1048576</currentMemory>
-  <vcpu placement='static'>1</vcpu>
+  <memory unit='KiB'>4194304</memory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
+  <vcpu placement='static'>2</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
