@@ -1,15 +1,15 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit els-04
+  virsh edit master-01
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>els-04</name>
-  <uuid>0351b8d9-e303-48f2-8ed3-8ae89a4ee9e3</uuid>
-  <memory unit='KiB'>16777216</memory>
-  <currentMemory unit='KiB'>16777216</currentMemory>
+  <name>master-01</name>
+  <uuid>08359412-a697-4ae5-8722-b85bda30ce0c</uuid>
+  <memory unit='KiB'>8388608</memory>
+  <currentMemory unit='KiB'>8388608</currentMemory>
   <vcpu placement='static'>4</vcpu>
   <resource>
     <partition>/machine</partition>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/els_04.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/master_01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -82,7 +82,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:15:22:45'/>
+      <mac address='52:54:00:36:97:a4'/>
       <source bridge='host-only'/>
       <bandwidth>
         <inbound average='2000'/>
@@ -90,12 +90,6 @@ or other application using the libvirt API.
       </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
-    </interface>
-    <interface type='bridge'>
-      <mac address='52:54:00:75:52:45'/>
-      <source bridge='host-only-2'/>
-      <model type='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </interface>
     <serial type='pty'>
       <target port='0'/>
