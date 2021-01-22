@@ -10,7 +10,7 @@ or other application using the libvirt API.
   <uuid>cee3b526-30c4-4be3-8fea-835453c24834</uuid>
   <memory unit='KiB'>67108864</memory>
   <currentMemory unit='KiB'>67108864</currentMemory>
-  <vcpu placement='static'>24</vcpu>
+  <vcpu placement='static'>8</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
     <boot dev='hd'/>
