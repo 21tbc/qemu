@@ -42,6 +42,13 @@ or other application using the libvirt API.
   </pm>
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
+    <disk type='file' device='cdrom'>
+      <driver name='qemu' type='raw'/>
+      <source file='/var/lib/libvirt/images/cn_windows_server_2008_r2_standard_enterprise_datacenter_web_vl_build_x64_dvd_x15-59777.iso'/>
+      <target dev='hda' bus='ide'/>
+      <readonly/>
+      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+    </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
@@ -57,15 +64,8 @@ or other application using the libvirt API.
         <total_bytes_sec>50000000</total_bytes_sec>
         <total_iops_sec>500</total_iops_sec>
       </iotune>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
-    </disk>
-    <disk type='file' device='cdrom'>
-      <driver name='qemu' type='raw'/>
-      <source file='/var/lib/libvirt/images/cn_windows_server_2008_r2_standard_enterprise_datacenter_web_vl_build_x64_dvd_x15-59777.iso'/>
-      <target dev='hda' bus='ide'/>
-      <readonly/>
       <boot order='1'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
