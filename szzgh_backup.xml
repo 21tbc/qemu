@@ -96,7 +96,7 @@ or other application using the libvirt API.
       <mac address='52:54:00:52:5b:86'/>
       <source bridge='host-only'/>
       <bandwidth>
-        <inbound average='400'/>
+        <inbound average='2500'/>
         <outbound average='400'/>
       </bandwidth>
       <model type='virtio'/>
