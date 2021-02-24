@@ -38,7 +38,7 @@ or other application using the libvirt API.
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none'/>
+      <driver name='qemu' type='raw' cache='none' discard='unmap'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
@@ -48,10 +48,10 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none'/>
+      <driver name='qemu' type='raw' cache='none' discard='unmap'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
@@ -84,6 +84,9 @@ or other application using the libvirt API.
     </controller>
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </controller>
+    <controller type='scsi' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:aa:cb:2c'/>
