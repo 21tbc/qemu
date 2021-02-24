@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit k8s_master_02
+  virsh edit eln87-k8s_master_03
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>k8s_master_02</name>
-  <uuid>639c9574-233c-4e2b-b1dd-6ccdcb684056</uuid>
+  <name>eln87-k8s_master_03</name>
+  <uuid>a0346185-9f1c-46c0-91f6-3f2b5cf72999</uuid>
   <memory unit='KiB'>8290304</memory>
   <currentMemory unit='KiB'>8290304</currentMemory>
   <vcpu placement='static'>8</vcpu>
@@ -47,7 +47,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/k8s_master_02.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/k8s_master_03.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -82,7 +82,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:a3:3f:c3'/>
+      <mac address='52:54:00:3f:d9:24'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
