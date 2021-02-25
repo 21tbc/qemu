@@ -1,28 +1,33 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit eln238-k8s-zhongjianjian
+  virsh edit eln238_k8s_zhongjianjian
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>eln238-k8s-zhongjianjian</name>
-  <uuid>2c2fa1ac-f623-4136-a4cb-2320a3966c30</uuid>
+  <name>eln238_k8s_zhongjianjian</name>
+  <uuid>d86d6936-3b71-424e-8966-3ab4be69ab4d</uuid>
   <memory unit='KiB'>67108864</memory>
   <currentMemory unit='KiB'>67108864</currentMemory>
   <vcpu placement='static'>12</vcpu>
+  <resource>
+    <partition>/machine</partition>
+  </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <boot dev='hd'/>
+    <bootmenu enable='no'/>
   </os>
   <features>
     <acpi/>
     <apic/>
-    <vmport state='off'/>
+    <hyperv>
+      <relaxed state='on'/>
+      <vapic state='on'/>
+      <spinlocks state='on' retries='4096'/>
+    </hyperv>
   </features>
-  <cpu mode='host-model'>
-    <model fallback='allow'/>
-  </cpu>
+  <cpu mode='host-passthrough'/>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='delay'/>
@@ -30,7 +35,7 @@ or other application using the libvirt API.
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
-  <on_crash>destroy</on_crash>
+  <on_crash>restart</on_crash>
   <pm>
     <suspend-to-mem enabled='no'/>
     <suspend-to-disk enabled='no'/>
@@ -38,7 +43,7 @@ or other application using the libvirt API.
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' discard='unmap'/>
+      <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
@@ -48,7 +53,8 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
+      <boot order='1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
       <driver name='qemu' type='raw' cache='none' discard='unmap'/>
@@ -61,7 +67,7 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
@@ -86,10 +92,10 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
     <controller type='scsi' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:aa:cb:2c'/>
+      <mac address='52:54:00:67:4b:37'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
@@ -106,7 +112,12 @@ or other application using the libvirt API.
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
-    <graphics type='spice' autoport='yes'/>
+    <graphics type='spice' port='-1' autoport='no' listen='127.0.0.1'>
+      <listen type='address' address='127.0.0.1'/>
+    </graphics>
+    <graphics type='vnc' port='-1' autoport='yes' listen='127.0.0.1'>
+      <listen type='address' address='127.0.0.1'/>
+    </graphics>
     <sound model='ich6'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </sound>
@@ -119,7 +130,7 @@ or other application using the libvirt API.
     <redirdev bus='usb' type='spicevmc'>
     </redirdev>
     <memballoon model='virtio'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </memballoon>
   </devices>
 </domain>
