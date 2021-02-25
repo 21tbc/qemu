@@ -54,8 +54,8 @@ or other application using the libvirt API.
       </source>
       <target dev='vda' bus='virtio'/>
       <iotune>
-        <total_bytes_sec>50000000</total_bytes_sec>
-        <total_iops_sec>500</total_iops_sec>
+        <total_bytes_sec>40000000</total_bytes_sec>
+        <total_iops_sec>400</total_iops_sec>
       </iotune>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
