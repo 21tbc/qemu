@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>big_data01</name>
   <uuid>c9b7f002-942d-450a-b944-de0355e4e38a</uuid>
-  <memory unit='KiB'>16777216</memory>
-  <currentMemory unit='KiB'>16777216</currentMemory>
+  <memory unit='KiB'>25165824</memory>
+  <currentMemory unit='KiB'>25165824</currentMemory>
   <vcpu placement='static'>8</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
