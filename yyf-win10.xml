@@ -45,8 +45,10 @@ or other application using the libvirt API.
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
+      <source file='/var/lib/libvirt/images/virtio-win-0.1.171.iso'/>
       <target dev='hda' bus='ide'/>
       <readonly/>
+      <boot order='1'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <disk type='network' device='disk'>
@@ -60,7 +62,7 @@ or other application using the libvirt API.
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='hdb' bus='ide'/>
-      <boot order='1'/>
+      <boot order='2'/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
