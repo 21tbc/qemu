@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit eln85-k8s_master_01
+  virsh edit eln86-k8s_master_02
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>eln85-k8s_master_01</name>
-  <uuid>44cabdfc-350b-41f7-81d6-de87a0531353</uuid>
+  <name>eln86-k8s_master_02</name>
+  <uuid>639c9574-233c-4e2b-b1dd-6ccdcb684056</uuid>
   <memory unit='KiB'>8290304</memory>
   <currentMemory unit='KiB'>8290304</currentMemory>
   <vcpu placement='static'>8</vcpu>
@@ -43,11 +43,11 @@ or other application using the libvirt API.
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw'/>
+      <driver name='qemu' type='raw' discard='unmap'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/eln85_k8s_master_01.img'>
+      <source protocol='rbd' name='v4_custom_data_pool/eln86_k8s_master_02.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -82,16 +82,10 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:db:fd:18'/>
+      <mac address='52:54:00:a3:3f:c3'/>
       <source bridge='host-only'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
-    </interface>
-    <interface type='bridge'>
-      <mac address='52:54:00:24:af:5b'/>
-      <source bridge='br0'/>
-      <model type='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </interface>
     <serial type='pty'>
       <target port='0'/>
