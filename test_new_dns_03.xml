@@ -22,6 +22,7 @@ or other application using the libvirt API.
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
+    <topology sockets='1' cores='1' threads='4'/>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
