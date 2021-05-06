@@ -1,33 +1,34 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit hvtest
+  virsh edit rscs106
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>hvtest</name>
-  <uuid>96167e36-b486-446f-9941-ccc231328e1a</uuid>
-  <memory unit='KiB'>8216576</memory>
-  <currentMemory unit='KiB'>8216576</currentMemory>
-  <memoryBacking>
-    <hugepages/>
-  </memoryBacking>
-  <vcpu placement='static'>4</vcpu>
+  <name>rscs106</name>
+  <uuid>f9026508-5fbe-4fd1-bf77-8adcc3a7f2cd</uuid>
+  <memory unit='KiB'>67108864</memory>
+  <currentMemory unit='KiB'>67108864</currentMemory>
+  <vcpu placement='static'>12</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <bootmenu enable='yes'/>
+    <bootmenu enable='no'/>
   </os>
   <features>
     <acpi/>
     <apic/>
+    <hyperv>
+      <relaxed state='on'/>
+      <vapic state='on'/>
+      <spinlocks state='on' retries='4096'/>
+    </hyperv>
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
-    <topology sockets='1' cores='4' threads='1'/>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
@@ -44,44 +45,31 @@ or other application using the libvirt API.
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/hv_data1.img'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='sda' bus='scsi'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
-    </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
-      </auth>
-      <source protocol='rbd' name='data-pool/hv_data0.img'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='sdb' bus='scsi'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
-    </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
-      </auth>
-      <source protocol='rbd' name='os-pool/hv_test_new.img'>
+      <source protocol='rbd' name='os-pool2/rscs106.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
+    </disk>
+    <disk type='network' device='disk'>
+      <driver name='qemu' type='raw' cache='none' discard='unmap'/>
+      <auth username='libvirt'>
+        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
+      </auth>
+      <source protocol='rbd' name='data-pool/rscs106_data_01.img'>
+        <host name='ceph101' port='6789'/>
+        <host name='ceph102' port='6789'/>
+        <host name='ceph103' port='6789'/>
+      </source>
+      <target dev='sdb' bus='scsi'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
@@ -106,37 +94,11 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
     </controller>
     <controller type='scsi' index='0' model='virtio-scsi'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0e' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:57:df:ec'/>
+      <mac address='52:54:00:bf:e9:75'/>
       <source bridge='br0'/>
-      <model type='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
-    </interface>
-    <interface type='bridge'>
-      <mac address='52:54:00:e9:ee:35'/>
-      <source bridge='br0'/>
-      <bandwidth>
-        <inbound average='1280'/>
-        <outbound average='1280'/>
-      </bandwidth>
-      <model type='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0c' function='0x0'/>
-    </interface>
-    <interface type='bridge'>
-      <mac address='52:54:00:36:28:eb'/>
-      <source bridge='br0'/>
-      <model type='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0d' function='0x0'/>
-    </interface>
-    <interface type='bridge'>
-      <mac address='52:54:00:62:66:f4'/>
-      <source bridge='br0'/>
-      <bandwidth>
-        <inbound average='1280'/>
-        <outbound average='1280'/>
-      </bandwidth>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>

@@ -1,29 +1,31 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit dingding_01
+  virsh edit rscs104
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>dingding_01</name>
-  <uuid>053480db-a73a-4937-8723-a9d15d741a87</uuid>
-  <memory unit='KiB'>8388608</memory>
-  <currentMemory unit='KiB'>8388608</currentMemory>
-  <memoryBacking>
-    <hugepages/>
-  </memoryBacking>
-  <vcpu placement='static'>2</vcpu>
+  <name>rscs104</name>
+  <uuid>11fdaf0c-a062-4472-8fd7-6f4d7b650dce</uuid>
+  <memory unit='KiB'>67108864</memory>
+  <currentMemory unit='KiB'>67108864</currentMemory>
+  <vcpu placement='static'>24</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
-    <bootmenu enable='yes'/>
+    <bootmenu enable='no'/>
   </os>
   <features>
     <acpi/>
     <apic/>
+    <hyperv>
+      <relaxed state='on'/>
+      <vapic state='on'/>
+      <spinlocks state='on' retries='4096'/>
+    </hyperv>
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
@@ -43,11 +45,11 @@ or other application using the libvirt API.
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
+      <driver name='qemu' type='raw'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool2/dingding_01.img'>
+      <source protocol='rbd' name='os-pool2/rscs104.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -57,23 +59,17 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
     <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
+      <driver name='qemu' type='raw' cache='none' discard='unmap'/>
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/eln231_data01.img'>
+      <source protocol='rbd' name='data-pool/rscs104_data_01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
       </source>
-      <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
-    </disk>
-    <disk type='file' device='cdrom'>
-      <driver name='qemu' type='raw'/>
-      <target dev='hda' bus='ide'/>
-      <readonly/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+      <target dev='sdb' bus='scsi'/>
+      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
@@ -91,14 +87,17 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x2'/>
     </controller>
     <controller type='pci' index='0' model='pci-root'/>
-    <controller type='virtio-serial' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
-    </controller>
     <controller type='ide' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>
     </controller>
+    <controller type='virtio-serial' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </controller>
+    <controller type='scsi' index='0' model='virtio-scsi'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+    </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:f0:84:c1'/>
+      <mac address='52:54:00:1b:23:47'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
@@ -122,7 +121,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </sound>
     <video>
-      <model type='virtio' heads='1'/>
+      <model type='qxl' ram='65536' vram='65536' vgamem='16384' heads='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
     </video>
     <memballoon model='virtio'>
