@@ -8,8 +8,8 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>dingding_02</name>
   <uuid>f60b4f4b-0351-4789-910a-398c91f84750</uuid>
-  <memory unit='KiB'>8388608</memory>
-  <currentMemory unit='KiB'>8388608</currentMemory>
+  <memory unit='KiB'>16384000</memory>
+  <currentMemory unit='KiB'>16384000</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
