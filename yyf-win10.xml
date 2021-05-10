@@ -8,12 +8,12 @@ or other application using the libvirt API.
 <domain type='kvm'>
   <name>yyf-win10</name>
   <uuid>9f2008af-482d-4673-9685-6a61dd1e4cd7</uuid>
-  <memory unit='KiB'>8392704</memory>
-  <currentMemory unit='KiB'>8392704</currentMemory>
+  <memory unit='KiB'>16777216</memory>
+  <currentMemory unit='KiB'>16777216</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
-  <vcpu placement='static'>4</vcpu>
+  <vcpu placement='static'>8</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
@@ -27,7 +27,7 @@ or other application using the libvirt API.
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
-    <topology sockets='2' cores='2' threads='1'/>
+    <topology sockets='1' cores='2' threads='4'/>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
