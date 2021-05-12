@@ -19,6 +19,7 @@ or other application using the libvirt API.
   </resource>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
+    <boot dev='hd'/>
     <bootmenu enable='yes'/>
   </os>
   <features>
@@ -49,19 +50,11 @@ or other application using the libvirt API.
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
-    <disk type='network' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
-      <auth username='libvirt'>
-        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
-      </auth>
-      <source protocol='rbd' name='v4_custom_data_pool/02-27-yyf-win10.img'>
-        <host name='ceph101' port='6789'/>
-        <host name='ceph102' port='6789'/>
-        <host name='ceph103' port='6789'/>
-      </source>
-      <target dev='vdb' bus='virtio'/>
-      <boot order='1'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='raw'/>
+      <source file='/backup-data/02-27-yyf-win10.img'/>
+      <target dev='vda' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </disk>
     <controller type='usb' index='0' model='ich9-ehci1'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x7'/>
