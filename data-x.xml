@@ -1,30 +1,24 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit big_data10
+  virsh edit data-x
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>big_data10</name>
-  <uuid>f23f34e8-66c9-408a-8962-18d8f95f1ce6</uuid>
-  <memory unit='KiB'>16777216</memory>
-  <currentMemory unit='KiB'>16777216</currentMemory>
-  <memoryBacking>
-    <hugepages/>
-  </memoryBacking>
-  <vcpu placement='static'>4</vcpu>
-  <resource>
-    <partition>/machine</partition>
-  </resource>
+  <name>data-x</name>
+  <uuid>1b032da1-4b10-49b9-9ce2-36a3c561cea7</uuid>
+  <memory unit='KiB'>33554432</memory>
+  <currentMemory unit='KiB'>33554432</currentMemory>
+  <vcpu placement='static'>8</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-xenial'>hvm</type>
     <boot dev='hd'/>
-    <bootmenu enable='yes'/>
   </os>
   <features>
     <acpi/>
     <apic/>
+    <vmport state='off'/>
   </features>
   <cpu mode='host-model'>
     <model fallback='allow'/>
@@ -36,28 +30,36 @@ or other application using the libvirt API.
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
-  <on_crash>restart</on_crash>
+  <on_crash>destroy</on_crash>
   <pm>
     <suspend-to-mem enabled='no'/>
     <suspend-to-disk enabled='no'/>
   </pm>
   <devices>
     <emulator>/usr/bin/kvm-spice</emulator>
-    <disk type='file' device='cdrom'>
-      <driver name='qemu' type='raw'/>
-      <target dev='hda' bus='ide'/>
-      <readonly/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
-    </disk>
-    <disk type='file' device='disk'>
-      <driver name='qemu' type='qcow2'/>
-      <source file='/big_data2/big_data10-os.qcow2'/>
+    <disk type='network' device='disk'>
+      <driver name='qemu' type='raw' cache='none'/>
+      <auth username='libvirt'>
+        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
+      </auth>
+      <source protocol='rbd' name='os-pool2/data-x.img'>
+        <host name='ceph101' port='6789'/>
+        <host name='ceph102' port='6789'/>
+        <host name='ceph103' port='6789'/>
+      </source>
       <target dev='vda' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </disk>
-    <disk type='file' device='disk'>
-      <driver name='qemu' type='qcow2'/>
-      <source file='/big_data2/big_data10_data.qcow2'/>
+    <disk type='network' device='disk'>
+      <driver name='qemu' type='raw' cache='none'/>
+      <auth username='libvirt'>
+        <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
+      </auth>
+      <source protocol='rbd' name='v4_custom_data_pool/data-x_data01.img'>
+        <host name='ceph101' port='6789'/>
+        <host name='ceph102' port='6789'/>
+        <host name='ceph103' port='6789'/>
+      </source>
       <target dev='vdb' bus='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </disk>
@@ -77,14 +79,14 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x2'/>
     </controller>
     <controller type='pci' index='0' model='pci-root'/>
-    <controller type='virtio-serial' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
-    </controller>
     <controller type='ide' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>
     </controller>
+    <controller type='virtio-serial' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:d6:57:ef'/>
+      <mac address='52:54:00:f5:66:cf'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
@@ -101,18 +103,20 @@ or other application using the libvirt API.
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
-    <graphics type='vnc' port='-1' autoport='yes' listen='127.0.0.1'>
-      <listen type='address' address='127.0.0.1'/>
-    </graphics>
+    <graphics type='spice' autoport='yes'/>
     <sound model='ich6'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </sound>
     <video>
-      <model type='virtio' heads='1'/>
+      <model type='qxl' ram='65536' vram='65536' vgamem='16384' heads='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
     </video>
+    <redirdev bus='usb' type='spicevmc'>
+    </redirdev>
+    <redirdev bus='usb' type='spicevmc'>
+    </redirdev>
     <memballoon model='virtio'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </memballoon>
   </devices>
 </domain>
