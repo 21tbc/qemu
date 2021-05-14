@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit hv-test-2021-5-14
+  virsh edit hv-syslog
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>hv-test-2021-5-14</name>
+  <name>hv-syslog</name>
   <uuid>9bb92ac6-27aa-409c-ae8e-ae2e024a0e2b</uuid>
   <memory unit='KiB'>4194304</memory>
   <currentMemory unit='KiB'>4194304</currentMemory>
