@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit yinlian_sql_data
+  virsh edit eln239
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>yinlian_sql_data</name>
+  <name>eln239</name>
   <uuid>d27dc8ce-5d86-467f-859f-e4dcd53545c5</uuid>
   <memory unit='KiB'>33554432</memory>
   <currentMemory unit='KiB'>33554432</currentMemory>
@@ -42,7 +42,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='os-pool2/yinlian_sql_data.img'>
+      <source protocol='rbd' name='os-pool2/eln239.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
@@ -55,7 +55,7 @@ or other application using the libvirt API.
       <auth username='libvirt'>
         <secret type='ceph' uuid='8d403a22-1e52-4556-8d87-0a003940fd8e'/>
       </auth>
-      <source protocol='rbd' name='data-pool/yinlian_sql_data_data01.img'>
+      <source protocol='rbd' name='data-pool/eln239_data01.img'>
         <host name='ceph101' port='6789'/>
         <host name='ceph102' port='6789'/>
         <host name='ceph103' port='6789'/>
